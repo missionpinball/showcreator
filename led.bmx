@@ -16,6 +16,10 @@ Pinlandia - LED.BMX
 
 
 ****************  History  *************************
+- V1.55 - 2017/07/07
+	- more code cleanup
+	- added SPC to toggle between start/finish ends
+	- added L to toggle between showing shapes or LEDs
 
 - V1.53 - 2017/07/07
 	- code cleanup
@@ -45,7 +49,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.52 - 2017-07-07"
+AppTitle$ = "Pinlandia - V1.54 - 2017-07-07"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -97,6 +101,7 @@ Global first_step:Int  = 0
 Global animate:Int = 0
 Global animate_current:Int = 0
 Global flash:Int = 0
+Global ledsonly:Int = 0
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
@@ -126,6 +131,10 @@ Repeat
 
 	If KeyHit(KEY_I)
 		flash = 60*4
+	EndIf
+	
+	If KeyHit(KEY_L)
+		ledsonly = 1-ledsonly 
 	EndIf
 
 	If KeyHit(KEY_A)
@@ -170,6 +179,17 @@ Repeat
 	If KeyHit(KEY_T)
 		cur_an.cycle_image()
 	EndIf
+	
+	'START/END
+	If KeyHit(KEY_SPACE)
+		se = 1-se
+		If se = 1
+			cur_an.set_cur_to_start() 
+		Else
+			cur_an.set_cur_to_end() 
+		EndIf
+		SetGlobalValues()
+	EndIf
 
 	If MouseHit(1)
 		Local mx = MouseX()
@@ -193,6 +213,7 @@ Repeat
 					Else
 						cur_an.set_cur_to_end() 
 					EndIf
+					SetGlobalValues()
 				EndIf
 				
 				'DELAY
@@ -299,6 +320,9 @@ Repeat
 
 		If mx < 400
 			cur_an.set_position( MouseX(), MouseY(), se)
+			If shift
+				cur_an.set_position( MouseX(), MouseY(), 1-se)
+			EndIf
 		Else
 			'menu stuff
 			If mx > 650
@@ -348,10 +372,10 @@ Repeat
 	SetBlend alphablend
 
 	SetColor 255,255,255
-	DrawLine 50,50,350,50
-	DrawLine 50,50,50,750
-	DrawLine 50,750,350,750
-	DrawLine 350,50,350,750
+	DrawLine 50-2,50-2,350+2,50-2
+	DrawLine 50-2,50-2,50-2,750+2
+	DrawLine 50-2,750+2,350+2,750+2
+	DrawLine 350+2,50-2,350+2,750+2
 
 	SetColor 32,32,32
 	DrawRect 402,0,400,800
@@ -558,12 +582,27 @@ Repeat
 	DrawText "Shape  "+cur_an.image_number,440,blockstarty+20
 	DrawText image_filename[cur_an.image_number],450,blockstarty+30
 	DrawText "Delay ms:          "+cur_an.delaysteps*MS_PER_FRAME,440,blockstarty+50
-	DrawText "Visible at Start:  "+cur_an.startOn,440,blockstarty+60
-	DrawText "Visible at End:    "+cur_an.EndOn,440,blockstarty+70
+	If cur_an.startOn = 1
+		DrawText "Visible at Start:  YES",440,blockstarty+60
+	Else
+		DrawText "Visible at Start:  NO",440,blockstarty+60
+	EndIf
+	If cur_an.EndOn = 1
+		DrawText "Visible at End:    YES",440,blockstarty+70
+	Else
+		DrawText "Visible at End:    NO",440,blockstarty+70
+	EndIf
 	DrawText "Anim Duration ms:  "+cur_an.duration,440,blockstarty+80
 	DrawText "Anim Steps:        "+Int(cur_an.duration/MS_PER_FRAME),440,blockstarty+90
 	DrawText "Total Steps:       "+(Int(cur_an.duration/MS_PER_FRAME)+cur_an.delaysteps),440,blockstarty+100
 
+
+	If ledsonly = 1
+		DrawText "SHOWING LEDs (SHAPES HIDDEN)",440,blockstarty+120
+	Else
+		DrawText "SHOWING SHAPES",440,blockstarty+120
+	EndIf
+	
 	blockstarty = 520
 	DrawText "    KEYS",440,blockstarty
 	
@@ -577,9 +616,13 @@ Repeat
 
 	DrawText "I - FLASH START/FINISH",440,blockstarty+100
 	DrawText "U - PLAY SEGMENT",440,blockstarty+110
-	DrawText "P - PLAY SET",440,blockstarty+120
-	DrawText "P+SHIFT - SAVE SCRIPT",440,blockstarty+130
-	DrawText "ESC - QUIT",440,blockstarty+160
+	DrawText "L - TOGGLE SHAPES/LEDS",440,blockstarty+120
+	DrawText "SPC - TOGGLE START/FINISH",440,blockstarty+130
+	
+	
+	DrawText "P - PLAY SET",440,blockstarty+150
+	DrawText "P+SHIFT - SAVE SCRIPT",440,blockstarty+160
+	DrawText "ESC - QUIT",440,blockstarty+170
 
 	'colour graphs
 	DrawText " START", col_start_x, col_start_y
@@ -654,13 +697,19 @@ Repeat
 			draw_Shapes()	
 		EndIf
 	EndIf	
-		
+
+	If ledsonly
+		led.updatecolors()	
+		SetBlend solidblend
+		SetRotation 0
+		SetScale 1,1
+		SetAlpha 1
+		SetLineWidth 1.0
+		SetColor 0,0,0
+		DrawRect 50,50,300,700
+		SetBlend lightblend
+	EndIf 
 	led.DrawLeds()
-	
-	If KeyHit(KEY_SPACE)
-		led.updatecolors()
-		led.dumpstate(1)
-	EndIf
 
   Flip
 
@@ -791,12 +840,12 @@ Type animation
 			anim_array[t].set_scale_x(g_sc_x,0)
 			anim_array[t].set_scale_y(g_sc_y,0)
 			anim_array[t].set_rotation(g_rot,0)
-			anim_array[t].x = 50+150
-			anim_array[t].y = 50+300
-			anim_array[t].start_x = 50+150
-			anim_array[t].start_y = 50+300
-			anim_array[t].end_x = 50+150
-			anim_array[t].end_y = 50+300
+			anim_array[t].x = cSTARTX
+			anim_array[t].y = cSTARTY
+			anim_array[t].start_x = cSTARTX
+			anim_array[t].start_y = cSTARTY
+			anim_array[t].end_x = cSTARTX
+			anim_array[t].end_y = cSTARTY
 			anim_array[t].startOn = 0
 			anim_array[t].endOn = 0
 			anim_array[t].followprevious = 0
@@ -1591,11 +1640,15 @@ Type led
 		For t = 0 To num_leds-1
 			p:led= ledarray[t]
 			If p.active > 0
-				SetColor 255,255,255
+				SetColor 200,200,200
 				DrawLine p.x-4,p.y-4,p.x+4,p.y-4
 				DrawLine p.x-4,p.y-4,p.x-4,p.y+4
 				DrawLine p.x+4,p.y-4,p.x+4,p.y+4
 				DrawLine p.x-4,p.y+4,p.x+4,p.y+4
+				If ledsonly
+					SetColor p.r,p.g,p.b
+					DrawRect p.x-7,p.y-7,15,15
+				EndIf
 			EndIf
 		Next	
 					
