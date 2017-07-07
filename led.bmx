@@ -1,9 +1,24 @@
 Rem
 
-- Mark Incitti - 2017
+****************************************************
+Pinlandia - LED.BMX
+****************************************************
 
-- TODO - FPS selector
+****************   Details   ***********************
 
+	- What is it?:      MPF LED show script generator
+	- Language:         Blitxmax
+	- Programmed by:    Mark Incitti - 2017
+
+****************    TODO     ***********************
+	- FPS selector
+	- code refactor - move functions into types
+
+
+****************  History  *************************
+
+- V1.53 - 2017/07/07
+	- code cleanup
 
 - V1.52 - 2017/07/07
 	- better behaviour when switching segments
@@ -21,6 +36,7 @@ Rem
 End Rem
 
 Strict
+
 Framework BRL.GlMax2D
 
 Import BRL.System
@@ -29,53 +45,44 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-Global framerate:Int = 30
-Global ms_per_frame:Int = 33
+AppTitle$ = "Pinlandia - V1.52 - 2017-07-07"
 
 SetGraphicsDriver GLMax2DDriver()
 
-AppTitle$ = "Pinlandia - V1.52 - 2017-07-07"
 
-Type appColor
-  Field red:Int
-  Field green:Int
-  Field blue:Int 
-  Field alpha:Int
-End Type
-   
+Global framerate:Int = 30
+Global ms_per_frame:Int = 33
+
 Graphics 800, 800, 0
 SetClsColor 0, 0, 0
 
-Global pixColor:appColor =New appColor
-Global num_leds
+Const cMAXLEDS = 256
+Const cMAXANIMS = 256
+Const cMAXIMAGES = 1000
+Const cDURATION = 1023
+Const cSTARTX = 50+150
+Const cSTARTY = 50+300
+
+Global pixColor:appColor = New appColor
+Global num_leds = 0
 Global ledarray:led[]
-ledarray= New led[256]
+ledarray = New led[cMAXLEDS]
+SetUpLeds()
 
-
-Global MAXIMAGES = 1000
 Global num_images:Int = 0
 Global images:TImage[]
-images= New TImage[MAXIMAGES]
-Global image_filename$[MAXIMAGES]
-
+images= New TImage[cMAXIMAGES]
+Global image_filename$[cMAXIMAGES]
 LoadImages()
 
-Global MAXANIMS = 256
 Global anim_array:animation[]
-anim_array = New animation[MAXANIMS+1]
+anim_array = New animation[cMAXANIMS+1]
 animation.CreateAnimations()
 Global bufferAnim:animation = New animation
 
 Global anim_index = 0
 Global cur_an:animation = anim_array[anim_index]
 cur_an.active = 1
-cur_an.x = 50+150
-cur_an.y = 50+300
-cur_an.start_x = 50+150
-cur_an.start_y = 50+300
-cur_an.end_x = 50+150
-cur_an.end_y = 50+300
-
 
 Global se:Int = 1
 
@@ -87,12 +94,9 @@ Global g_cl_g = 128
 Global g_cl_b = 200
 Global first_step:Int  = 0
 
-Global duration:Int = 1023
 Global animate:Int = 0
 Global animate_current:Int = 0
 Global flash:Int = 0
-
-SetUpLeds()
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
@@ -101,43 +105,21 @@ Local col_start_x = 650
 Local col_start_y = 490
 Local col_end_x = col_start_x + 80
 
+
+
+
+'-- main loop  ---------------------------------------------------------------------------------------------------
+
 Repeat
 
 	Cls
-Rem
-	If KeyHit(KEY_r)
-		If KeyDown(KEY_LSHIFT)
-			g_cl_r = (g_cl_r +2) Mod 256
-		Else
-			g_cl_r = (g_cl_r -2) Mod 256
-		EndIf
-		cur_an.set_r(g_cl_r,se)
-	EndIf
-
-	If KeyHit(KEY_g)
-		If KeyDown(KEY_LSHIFT)
-			g_cl_g = (g_cl_g +2) Mod 256
-		Else
-			g_cl_g = (g_cl_g -2) Mod 256
-		EndIf
-		cur_an.set_g(g_cl_g,se)
-	EndIf
-
-	If KeyHit(KEY_b)
-		If KeyDown(KEY_LSHIFT)
-			g_cl_b = (g_cl_b +2) Mod 256
-		Else
-			g_cl_b = (g_cl_b -2) Mod 256
-		EndIf
-		cur_an.set_b(g_cl_b,se)
-	EndIf
-End Rem
 
 	Local mult:Int = 1
 	Local shift:Int = 0
 	If KeyDown(KEY_LCONTROL) Or KeyDown(KEY_RCONTROL)
 		mult = 10
 	EndIf
+
 	If KeyDown(KEY_LSHIFT) Or KeyDown(KEY_RSHIFT)
 		shift = 1
 	EndIf
@@ -145,7 +127,6 @@ End Rem
 	If KeyHit(KEY_I)
 		flash = 60*4
 	EndIf
-
 
 	If KeyHit(KEY_A)
 		If shift = 1
@@ -189,8 +170,6 @@ End Rem
 	If KeyHit(KEY_T)
 		cur_an.cycle_image()
 	EndIf
-
-
 
 	If MouseHit(1)
 		Local mx = MouseX()
@@ -242,10 +221,10 @@ End Rem
 				If my > 90 And my < 100
 					If mx < 690 
 						anim_index =  anim_index - 1
-						If anim_index < 0 Then anim_index = MAXANIMS-1
+						If anim_index < 0 Then anim_index = cMAXANIMS-1
 					Else
 						anim_index =  anim_index + 1
-						If anim_index > MAXANIMS-1 Then anim_index = 0
+						If anim_index > cMAXANIMS-1 Then anim_index = 0
 					EndIf
 					cur_an = anim_array[anim_index]
 					SetGlobalValues()
@@ -290,7 +269,6 @@ End Rem
 				If my > 250 And my < 250+10
 					PasteAllFromBuffer()
 				EndIf
-
 
 				'LOAD SEGMENT
 				If my > 310 And my < 310+10
@@ -366,7 +344,6 @@ End Rem
 			EndIf
 		EndIf
 	EndIf 
-	
 	
 	SetBlend alphablend
 
@@ -542,7 +519,6 @@ End Rem
 	EndIf
 	DrawText "SAVE SET", 650, 370
 
-
 	SetColor 180,180,180
 	Local blockstarty = 10
 	DrawText "CURRENT", 480,blockstarty
@@ -577,7 +553,6 @@ End Rem
 	DrawText "sx "+cur_an.end_sc_x,440,blockstarty+80
 	DrawText "sy "+cur_an.end_sc_y,440,blockstarty+90
 
-
 	blockstarty = 360
 	DrawText "Animation Segment: "+anim_index,440,blockstarty
 	DrawText "Shape  "+cur_an.image_number,440,blockstarty+20
@@ -588,7 +563,6 @@ End Rem
 	DrawText "Anim Duration ms:  "+cur_an.duration,440,blockstarty+80
 	DrawText "Anim Steps:        "+Int(cur_an.duration/MS_PER_FRAME),440,blockstarty+90
 	DrawText "Total Steps:       "+(Int(cur_an.duration/MS_PER_FRAME)+cur_an.delaysteps),440,blockstarty+100
-
 
 	blockstarty = 520
 	DrawText "    KEYS",440,blockstarty
@@ -606,7 +580,6 @@ End Rem
 	DrawText "P - PLAY SET",440,blockstarty+120
 	DrawText "P+SHIFT - SAVE SCRIPT",440,blockstarty+130
 	DrawText "ESC - QUIT",440,blockstarty+160
-	
 
 	'colour graphs
 	DrawText " START", col_start_x, col_start_y
@@ -640,8 +613,6 @@ End Rem
 	DrawRect col_end_x+40,col_start_y+20+cur_an.end_cl_b,10,1
 	SetColor cur_an.end_cl_r,cur_an.end_cl_g,cur_an.end_cl_b
 	DrawRect col_end_x,col_start_y+285,50,10
-
-
 
 	If KeyHit(KEY_P)
 		If KeyDown(KEY_LSHIFT)
@@ -683,7 +654,6 @@ End Rem
 			draw_Shapes()	
 		EndIf
 	EndIf	
-
 		
 	led.DrawLeds()
 	
@@ -692,17 +662,20 @@ End Rem
 		led.dumpstate(1)
 	EndIf
 
-
   Flip
 
 Until KeyHit(KEY_ESCAPE)
 
 End 
 
-'----------------------------------------------------------------------------------------------------------------------------------
+'-----------------------------------------------------------------------------------------------------
+
+
+
 
 
 Function ShowContext(txt$)
+
 	SetColor 80,80,80
 	DrawRect 20,750,610,40	
 	SetColor 240,240,240
@@ -714,6 +687,7 @@ End Function
 
 
 Function mouseover:Int(x:Int,y:Int)
+
 	Local my:Int, mx:Int
 	my = MouseY()  
 	mx = MouseX()
@@ -722,10 +696,13 @@ Function mouseover:Int(x:Int,y:Int)
 	Else
 		Return 0
 	EndIf
+
 End Function
 
 
+
 Function SetGlobalValues()
+
 	If se = 1
 		g_cl_r = cur_an.start_cl_r
 		g_cl_g = cur_an.start_cl_g
@@ -741,7 +718,9 @@ Function SetGlobalValues()
 		g_sc_y = cur_an.end_sc_y
 		g_rot = cur_an.end_rot
 	EndIf
+
 End Function
+
 
 
 Type animation
@@ -797,7 +776,7 @@ Type animation
 	
 	Function createAnimations()
 		Local t:Int
-		For t = 0 To MAXANIMS-1
+		For t = 0 To cMAXANIMS-1
 			anim_array[t] = New animation
 			anim_array[t].anim_number = t
 			anim_array[t].set_r(g_cl_r,1)
@@ -812,13 +791,17 @@ Type animation
 			anim_array[t].set_scale_x(g_sc_x,0)
 			anim_array[t].set_scale_y(g_sc_y,0)
 			anim_array[t].set_rotation(g_rot,0)
-			anim_array[t].x = 0
-			anim_array[t].y = 0
+			anim_array[t].x = 50+150
+			anim_array[t].y = 50+300
+			anim_array[t].start_x = 50+150
+			anim_array[t].start_y = 50+300
+			anim_array[t].end_x = 50+150
+			anim_array[t].end_y = 50+300
 			anim_array[t].startOn = 0
 			anim_array[t].endOn = 0
 			anim_array[t].followprevious = 0
 			anim_array[t].delaysteps = 0
-			anim_array[t].duration = 1023
+			anim_array[t].duration = cDURATION
 			anim_array[t].active = 0
 			anim_array[t].animating = 0
 		Next
@@ -861,7 +844,6 @@ Type animation
 		cl_g = end_cl_g
 		cl_b = end_cl_b
 	End Method
-
 	
 	Method cycle_image()
 		image_number = (image_number + 1) Mod num_images
@@ -1104,7 +1086,6 @@ Type animation
 		EndIf
 	End Method
 	
-	
 	Method loadSegmentFromFile(fh:TStream, a:animation)
 		Local line$
 		Local param$, val$
@@ -1218,7 +1199,6 @@ Type animation
 		
 	End Method
 
-
 End Type
 
 
@@ -1226,6 +1206,7 @@ End Type
 
 
 Function ReverseToFrom()
+
 	'copy start
 	Local lcl_r:Float = cur_an.start_cl_r
 	Local lcl_g:Float = cur_an.start_cl_g
@@ -1257,7 +1238,9 @@ Function ReverseToFrom()
 End Function
 
 
+
 Function CopyToBuffer()
+
 	'copy from current
 	bufferAnim.cl_r = cur_an.cl_r
 	bufferAnim.cl_g = cur_an.cl_g
@@ -1297,6 +1280,7 @@ Function CopyToBuffer()
 End Function
 
 
+
 Function PasteFromBuffer()
 	cur_an.set_r(bufferAnim.cl_r,se)
 	cur_an.set_g(bufferAnim.cl_g,se)
@@ -1306,6 +1290,7 @@ Function PasteFromBuffer()
 	cur_an.set_rotation(bufferAnim.rot,se)
 	cur_an.set_position(bufferAnim.x,bufferAnim.y,se)
 End Function
+
 
 
 Function PasteAllFromBuffer()
@@ -1357,10 +1342,8 @@ End Function
 
 
 
-
-
-
 Function loadImages()
+
 	num_images = 0
 	AutoImageFlags (FILTEREDIMAGE|MIPMAPPEDIMAGE)
 	AutoMidHandle(True) 
@@ -1386,7 +1369,7 @@ Function loadImages()
 				fn$ = ""
 			Else
 				If fn$ <> ""
-					If s < MAXIMAGES
+					If s < cMAXIMAGES
 						image_filename$[s] = subdir$
 						images[s] = LoadImage(fn$)
 					EndIf
@@ -1403,10 +1386,12 @@ Function loadImages()
 End Function
 
 
+
 Function getShapeIndex:Int(image_name$)
+
 	Local ret = -1
 	Local t = 0
-	While t < MAXIMAGES
+	While t < cMAXIMAGES
 		Local img$ = image_filename$[t]
 		If image_name = img
 			ret = t
@@ -1415,6 +1400,7 @@ Function getShapeIndex:Int(image_name$)
 		t= t + 1
 	Wend
 	Return ret
+
 End Function
 
 
@@ -1422,7 +1408,7 @@ End Function
 Function start_animation()
 
 	Local t:Int
-	For t = 0 To MAXANIMS-1
+	For t = 0 To cMAXANIMS-1
 		If anim_array[t].active = 1
 			anim_array[t].set_delta()
 			anim_array[t].set_cur_to_start()
@@ -1432,17 +1418,19 @@ Function start_animation()
 End Function
 
 
+
 Function draw_Shapes()
 
 	SetBlend lightblend
 	Local t:Int
-	For t = 0 To MAXANIMS-1
+	For t = 0 To cMAXANIMS-1
 		If anim_array[t].active = 1
 			anim_array[t].draw()
 		EndIf
 	Next	
 	
 End Function
+
 
 
 Function update_Current_shape()
@@ -1462,7 +1450,7 @@ Function update_shapes()
 
 	Local t:Int
 	Local animating:Int = 0
-	For t = 0 To MAXANIMS-1
+	For t = 0 To cMAXANIMS-1
 		If anim_array[t].active = 1
 			anim_array[t].update()
 			If anim_array[t].animating = 1 Then animating = 1
@@ -1475,10 +1463,13 @@ Function update_shapes()
 			g_write_to_file = 0
 		EndIf
 	EndIf
+
 End Function
 
 
+
 Function GetPixel:appColor(x:Int, y:Int)
+
   ' should read the backbuffer at x, y and return a Type-variable containing r, g, b, a
   Local result:appColor =New appColor
 
@@ -1495,38 +1486,40 @@ Function GetPixel:appColor(x:Int, y:Int)
   Return result
 
 End Function
-'-----------------------------------------------------------
 
 
 
 Function SetUpLeds()
-		Local fh:TStream, fn$
-		Local ln$
-		Local ledname$
-		Local xf:Float, yf:Float
-		Local lnum% = 0
-		
-		fn$ = "ledsloc.txt"
-		
-		fh = OpenFile(fn$)
-		If fh <> Null
-			While Not Eof(fh)
-				ln$ = ReadLine(fh)
-				ledname$ = ParseString$(ln$, 1,":")
-				ln$ = ReadLine(fh)
-				xf = Float(ParseString$(ln$, 2,":"))
-				ln$ = ReadLine(fh)
-				yf = Float(ParseString$(ln$, 2,":"))
-				'DebugLog(ledname$+Int(xf*400)+Int(yf*800))
-				led.CreateLed(ledname, 50+Int(xf*300), 50+Int(yf*700))
-			Wend
-			CloseFile fh
-		EndIf			
-		
-	End Function
+
+	Local fh:TStream, fn$
+	Local ln$
+	Local ledname$
+	Local xf:Float, yf:Float
+	Local lnum% = 0
+	
+	fn$ = "ledsloc.txt"
+	
+	fh = OpenFile(fn$)
+	If fh <> Null
+		While Not Eof(fh)
+			ln$ = ReadLine(fh)
+			ledname$ = ParseString$(ln$, 1,":")
+			ln$ = ReadLine(fh)
+			xf = Float(ParseString$(ln$, 2,":"))
+			ln$ = ReadLine(fh)
+			yf = Float(ParseString$(ln$, 2,":"))
+			'DebugLog(ledname$+Int(xf*400)+Int(yf*800))
+			led.CreateLed(ledname, 50+Int(xf*300), 50+Int(yf*700))
+		Wend
+		CloseFile fh
+	EndIf			
+	
+End Function
+
 	
 	
 Function ParseString$(s$ , segment% , del$)
+
 	If Right$(s$ , 1) <> del$
 		s$ = s$ + del$
 	EndIf
@@ -1546,8 +1539,20 @@ Function ParseString$(s$ , segment% , del$)
 	Next
 	
 	Return ""
+
 End Function
 	
+	
+
+Type appColor
+
+	Field red:Int
+	Field green:Int
+	Field blue:Int 
+	Field alpha:Int
+	
+End Type
+   
 	
 	
 Type led
@@ -1557,7 +1562,6 @@ Type led
 	Field prev_r:Int, prev_g:Int, prev_b:Int
 	Field active:Int
 	Field num_leds:Int
-
 
 	Function CreateLed( name$, x#, y# )	
 		Local t:Int = num_leds 
@@ -1575,7 +1579,6 @@ Type led
 		num_leds = num_leds + 1
 		'DebugLog "LED "+num_leds+" created"
 	End Function	
-
 	
 	Function DrawLeds()
 		Local p:led
@@ -1598,7 +1601,6 @@ Type led
 					
 	End Function
 	
-	
 	Function UpdateColors()	
 		Local p:led,t:Int
 		For t = 0 To num_leds-1
@@ -1609,7 +1611,6 @@ Type led
 		Next	
 	End Function
 
-	
 	Method Update()	
 		prev_r = r
 		prev_g = g
@@ -1620,7 +1621,6 @@ Type led
 		b = pixColor.blue
 	End Method
 		
-
 	Function dumpState(diff=0)	
 		Local p:led, t:Int
 		Local r$, g$, b$
@@ -1667,13 +1667,12 @@ Type led
 		EndIf
 	End Function
 	
-	
 End Type
 	
 
-
 	
 Function openOutputFile()
+
 	Local fn$
 	Local t:Int = 1
 	While t < 10000
@@ -1685,10 +1684,13 @@ Function openOutputFile()
 			t = t+1
 		EndIf
 	Wend
+
 End Function
 
 
+
 Function write_a_line(txt$)	
+
 	If g_write_to_file = 1
 		If g_fh <> Null
 			WriteLine (g_fh,txt)
@@ -1696,6 +1698,7 @@ Function write_a_line(txt$)
 	Else
 		DebugLog txt
 	EndIf
+	
 End Function
 
 
@@ -1710,7 +1713,7 @@ Function SaveAllSegments()
 	fh = WriteFile(fn$)
 	If fh <> Null
 		Local t:Int
-		For t = 0 To MAXANIMS-1
+		For t = 0 To cMAXANIMS-1
 			anim_array[t].SaveSegmentToFile(fh)
 		Next	
 		CloseFile(fh)
@@ -1719,7 +1722,6 @@ Function SaveAllSegments()
 	EndIf	
 
 End Function
-
 
 
 
@@ -1733,7 +1735,7 @@ Function LoadAllSegments()
 	fh = ReadFile(fn$)
 	If fh <> Null
 		Local t:Int
-		For t = 0 To MAXANIMS-1
+		For t = 0 To cMAXANIMS-1
 			anim_array[t].LoadSegmentFromFile(fh, anim_array[t])
 		Next	
 		CloseFile(fh)	
@@ -1763,6 +1765,7 @@ Function SaveSegment(bsegmentNum:Int)
 End Function
 
 
+
 Function LoadSegment(segmentNum:Int)
 
 	Local fh:TStream
@@ -1780,5 +1783,6 @@ Function LoadSegment(segmentNum:Int)
 	
 End Function
 	
+
 	
 	
