@@ -13,10 +13,14 @@ Pinlandia - LED.BMX
 ****************    TODO     ***********************
 	- FPS selector
 	- code refactor - move functions into types
-
+	- led loading from monitor.yaml 
+	- widebody/standard toggle (currently wide only)
 
 ****************  History  *************************
 - V1.55 - 2017/07/07
+	- corrected playfield width/height scale
+
+- V1.54 - 2017/07/07
 	- more code cleanup
 	- added SPC to toggle between start/finish ends
 	- added L to toggle between showing shapes or LEDs
@@ -49,7 +53,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.54 - 2017-07-07"
+AppTitle$ = "Pinlandia - V1.55 - 2017-07-07"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -372,10 +376,10 @@ Repeat
 	SetBlend alphablend
 
 	SetColor 255,255,255
-	DrawLine 50-2,50-2,350+2,50-2
-	DrawLine 50-2,50-2,50-2,750+2
-	DrawLine 50-2,750+2,350+2,750+2
-	DrawLine 350+2,50-2,350+2,750+2
+	DrawLine 25-2,50-2,375+2,50-2
+	DrawLine 25-2,50-2,25-2,750+2
+	DrawLine 25-2,750+2,375+2,750+2
+	DrawLine 375+2,50-2,375+2,750+2
 
 	SetColor 32,32,32
 	DrawRect 402,0,400,800
@@ -706,7 +710,7 @@ Repeat
 		SetAlpha 1
 		SetLineWidth 1.0
 		SetColor 0,0,0
-		DrawRect 50,50,300,700
+		DrawRect 25,50,350,700
 		SetBlend lightblend
 	EndIf 
 	led.DrawLeds()
@@ -1558,7 +1562,7 @@ Function SetUpLeds()
 			ln$ = ReadLine(fh)
 			yf = Float(ParseString$(ln$, 2,":"))
 			'DebugLog(ledname$+Int(xf*400)+Int(yf*800))
-			led.CreateLed(ledname, 50+Int(xf*300), 50+Int(yf*700))
+			led.CreateLed(ledname, 25+Int(xf*350), 50+Int(yf*700))
 		Wend
 		CloseFile fh
 	EndIf			
