@@ -1,0 +1,153 @@
+# show_version=4
+- time: 0
+  leds:
+      rgb_bug_1: 'FA0B0C'
+      rgb_bug_2: 'FA0B0C'
+      rgb_bug_3: 'FA0B0C'
+    
+- time: '+1'
+  leds:
+      rgb_bug_1: '000000'
+      rgb_bug_2: 'F70A0B'
+      rgb_bug_3: '000000'
+      rgb_oogie_mode_5: 'F70A0B'
+      rgb_oogie_mode_6: 'F70A0B'
+      rgb_shock_rect: 'F70A0B'
+    
+- time: '+1'
+  leds:
+      rgb_bug_2: '000000'
+      rgb_lock_rect: 'F4090A'
+      rgb_oogie_mode_3: 'F4090A'
+      rgb_oogie_mode_4: 'F4090A'
+      rgb_oogie_mode_5: 'F4090A'
+      rgb_oogie_mode_6: 'F4090A'
+      rgb_shock_rect: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_lock_rect: '000000'
+      rgb_oogie_mode_1: 'F10909'
+      rgb_oogie_mode_2: 'F10909'
+      rgb_oogie_mode_3: 'F10909'
+      rgb_oogie_mode_4: 'F10909'
+      rgb_oogie_mode_5: '360202'
+      rgb_oogie_mode_6: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_mode_1: 'EE0808'
+      rgb_oogie_mode_2: 'EE0808'
+      rgb_oogie_mode_3: '140101'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_mode_5: '000000'
+      rgb_oogie_moon: 'EE0808'
+      rgb_oogie_moon2: 'EE0808'
+      rgb_oogie_moon3: 'EE0808'
+      rgb_soup_circle: 'EC0808'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: '530203'
+      rgb_oogie_mode_1: '000000'
+      rgb_oogie_mode_2: '000000'
+      rgb_oogie_mode_3: '000000'
+      rgb_oogie_moon: 'EB0708'
+      rgb_oogie_moon2: '300102'
+      rgb_oogie_moon3: 'EB0708'
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: 'E80607'
+      rgb_charwiz_rect: 'E80607'
+      rgb_oogie_moon: 'E80607'
+      rgb_oogie_moon2: '000000'
+      rgb_oogie_moon3: 'E80607'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: 'E50606'
+      rgb_charwiz_rect: 'E50606'
+      rgb_christmastime_rect: 'E50606'
+      rgb_jack_circle: 'E50606'
+      rgb_oogie_moon: '000000'
+      rgb_oogie_moon3: '000000'
+      rgb_sally_circle: 'E50606'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: '000000'
+      rgb_charwiz_rect: 'E10505'
+      rgb_christmastime_rect: 'E10505'
+      rgb_holiday_christmas: 'E10505'
+      rgb_holiday_thanksgiving: 'E10505'
+      rgb_holiday_valentine: 'E10505'
+      rgb_jack_circle: 'E10505'
+      rgb_sally_circle: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_charwiz_rect: '000000'
+      rgb_christmastime_rect: 'DE0404'
+      rgb_holiday_christmas: 'DE0404'
+      rgb_holiday_door: 'DE0404'
+      rgb_holiday_halloween: 'DE0404'
+      rgb_holiday_stpat: 'DE0404'
+      rgb_holiday_thanksgiving: 'DE0404'
+      rgb_holiday_valentine: 'DE0404'
+      rgb_jack_circle: 'DE0404'
+    
+- time: '+1'
+  leds:
+      grb_gi_10: 'DA0304'
+      rgb_christmastime_rect: '000000'
+      rgb_holiday_christmas: 'DB0304'
+      rgb_holiday_door: 'DB0304'
+      rgb_holiday_easter: 'DB0304'
+      rgb_holiday_halloween: '010000'
+      rgb_holiday_independence: 'DB0304'
+      rgb_holiday_stpat: 'DB0304'
+      rgb_holiday_thanksgiving: '000000'
+      rgb_holiday_valentine: 'DB0304'
+      rgb_jack_circle: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_10: '000000'
+      rgb_holiday_christmas: '150000'
+      rgb_holiday_door: 'D80303'
+      rgb_holiday_easter: 'D80303'
+      rgb_holiday_halloween: '000000'
+      rgb_holiday_independence: 'D80303'
+      rgb_holiday_stpat: 'D80303'
+      rgb_holiday_valentine: 'D80303'
+      rgb_keepshooting: 'D80303'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_christmas: '000000'
+      rgb_holiday_door: '060000'
+      rgb_holiday_easter: 'D50202'
+      rgb_holiday_independence: '000000'
+      rgb_holiday_stpat: 'D50202'
+      rgb_holiday_valentine: '000000'
+      rgb_keepshooting: 'D50202'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_door: '000000'
+      rgb_holiday_easter: 'D20101'
+      rgb_holiday_stpat: '000000'
+      rgb_keepshooting: 'D20101'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_easter: '020000'
+      rgb_keepshooting: 'CF0000'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_easter: '000000'
+      rgb_keepshooting: '000000'
+    

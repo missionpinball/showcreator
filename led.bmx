@@ -17,6 +17,12 @@ Pinlandia - LED.BMX
 	- widebody/standard toggle (currently wide only)
 
 ****************  History  *************************
+- V1.57 - 2017/07/20
+	- make show version a variable
+
+- V1.56 - 2017/07/10
+	- hold M key to go slowmo
+
 - V1.55 - 2017/07/07
 	- corrected playfield width/height scale
 
@@ -53,7 +59,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.55 - 2017-07-07"
+AppTitle$ = "Pinlandia - V1.57 - 2017-07-20"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -70,6 +76,9 @@ Const cMAXIMAGES = 1000
 Const cDURATION = 1023
 Const cSTARTX = 50+150
 Const cSTARTY = 50+300
+
+
+Global SHOW_VERSION$ = "# show_version=4"
 
 Global pixColor:appColor = New appColor
 Global num_leds = 0
@@ -106,6 +115,7 @@ Global animate:Int = 0
 Global animate_current:Int = 0
 Global flash:Int = 0
 Global ledsonly:Int = 0
+Global slowmo:Int = 0
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
@@ -132,6 +142,10 @@ Repeat
 	If KeyDown(KEY_LSHIFT) Or KeyDown(KEY_RSHIFT)
 		shift = 1
 	EndIf
+
+'	If KeyHit(KEY_M)
+'		slowmo = 1-slowmo 
+'	EndIf
 
 	If KeyHit(KEY_I)
 		flash = 60*4
@@ -278,11 +292,13 @@ Repeat
 				'PASTE
 				If my > 190 And my < 190+10
 					PasteFromBuffer()
+					SetGlobalValues()
 				EndIf
 
 				'REVERSE
 				If my > 210 And my < 210+10
 					ReverseToFrom()
+					SetGlobalValues()
 				EndIf
 
 				'COPY SEGMENT
@@ -293,6 +309,7 @@ Repeat
 				'PASTE SEGMENT
 				If my > 250 And my < 250+10
 					PasteAllFromBuffer()
+					SetGlobalValues()
 				EndIf
 
 				'LOAD SEGMENT
@@ -308,6 +325,7 @@ Repeat
 				'LOAD SET
 				If my > 350 And my < 350+10
 					LoadAllSegments()
+					SetGlobalValues()
 				EndIf
 
 				'SAVE SET
@@ -666,7 +684,7 @@ Repeat
 			g_write_to_file = 1
 			openOutputFile()
 		EndIf
-		write_a_line("# show_version=4")
+		write_a_line(SHOW_VERSION)
 		write_a_line("- time: 0")
 		animate = 1
 		start_animation()
@@ -716,6 +734,7 @@ Repeat
 	led.DrawLeds()
 
   Flip
+	If KeyDown(KEY_M) Delay 500
 
 Until KeyHit(KEY_ESCAPE)
 
