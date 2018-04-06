@@ -1,0 +1,300 @@
+# show_version=5
+- time: 0
+  lights:
+      grb_gi_19: '0092FF'
+      grb_gi_20: '0092FF'
+      grb_gi_21: '0092FF'
+      rgb_lorbit_arrow: '0092FF'
+      rgb_lorbit_circle: '0092FF'
+    
+- time: '+1'
+  lights:
+      rgb_lramp_arrow: '0092FF'
+      rgb_lramp_ldiamond: '0092FF'
+      rgb_lramp_rdiamond: '0092FF'
+      rgb_mayor_arrow: '0092FF'
+    
+- time: '+1'
+  lights:
+      rgb_lramp_circle: '0092FF'
+      rgb_mayor_circle: '0092FF'
+      rgb_santa_a: '0092FF'
+      rgb_santa_s: '0092FF'
+      rgb_zero_circle: '0092FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_18: '0092FF'
+      rgb_mayor_c_circle: '0092FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: '0092FF'
+      rgb_bathtub_rect: '0092FF'
+      rgb_sally_circle: '0092FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: '0092FF'
+      grb_gi_15: '0092FF'
+      rgb_charwiz_rect: '0092FF'
+      rgb_christmastime_rect: '0092FF'
+      rgb_doctor_circle: '0092FF'
+      rgb_holiday_thanksgiving: '0092FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_19: '00FFFF'
+      grb_gi_20: '00FFFF'
+      grb_gi_21: '00FFFF'
+      rgb_holiday_christmas: '0092FF'
+      rgb_holiday_door: '0092FF'
+      rgb_holiday_halloween: '0092FF'
+      rgb_jack_circle: '0092FF'
+      rgb_lorbit_arrow: '00FFFF'
+      rgb_lorbit_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      rgb_holiday_easter: '0092FF'
+      rgb_holiday_independence: '0092FF'
+      rgb_holiday_stpat: '0092FF'
+      rgb_holiday_valentine: '0092FF'
+      rgb_lramp_arrow: '00FFFF'
+      rgb_lramp_ldiamond: '00FFFF'
+      rgb_lramp_rdiamond: '00FFFF'
+      rgb_mayor_arrow: '00FFFF'
+      rgb_santa_n: '0092FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: '0092FF'
+      grb_gi_12: '0092FF'
+      grb_gi_18: '000000'
+      rgb_keepshooting: '0092FF'
+      rgb_lramp_circle: '00FFFF'
+      rgb_mayor_circle: '00FFFF'
+      rgb_santa_a: '00FFFF'
+      rgb_santa_s: '00FFFF'
+      rgb_zero_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: '0092FF'
+      grb_gi_18: '00FFFF'
+      grb_gi_9: '0092FF'
+      rgb_mayor_c_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: '00FFFF'
+      grb_gi_8: '0092FF'
+      rgb_bathtub_rect: '00FFFF'
+      rgb_sally_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: '00FFFF'
+      grb_gi_15: '00FFFF'
+      rgb_charwiz_rect: '00FFFF'
+      rgb_christmastime_rect: '00FFFF'
+      rgb_doctor_circle: '00FFFF'
+      rgb_holiday_thanksgiving: '00FFFF'
+    
+- time: '+1'
+  lights:
+      rgb_holiday_christmas: '00FFFF'
+      rgb_holiday_door: '00FFFF'
+      rgb_holiday_halloween: '00FFFF'
+      rgb_jack_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_21: '00FF7D'
+      rgb_holiday_easter: '00FFFF'
+      rgb_holiday_independence: '00FFFF'
+      rgb_holiday_stpat: '00FFFF'
+      rgb_holiday_valentine: '00FFFF'
+      rgb_santa_n: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: '00FFFF'
+      grb_gi_12: '00FFFF'
+      grb_gi_18: '000000'
+      grb_gi_20: '00FF7D'
+      rgb_keepshooting: '00FFFF'
+      rgb_lorbit_arrow: '00FF7D'
+      rgb_lorbit_circle: '00FF7D'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: '00FFFF'
+      grb_gi_9: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_18: '00FF7D'
+      grb_gi_19: '00FF7D'
+      grb_gi_8: '00FFFF'
+      rgb_lramp_arrow: '00FF7D'
+      rgb_lramp_ldiamond: '00FF7D'
+    
+- time: '+1'
+  lights:
+      grb_gi_15: '000000'
+      rgb_lramp_circle: '00FF7D'
+      rgb_lramp_rdiamond: '00FF7D'
+      rgb_mayor_arrow: '00FF7D'
+      rgb_mayor_circle: '00FF7D'
+      rgb_santa_s: '00FF7D'
+      rgb_zero_circle: '00FF7D'
+    
+- time: '+1'
+  lights:
+      grb_gi_15: '00FF7D'
+      rgb_santa_a: '00FF7D'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: '00FF7C'
+      grb_gi_15: '00FF7C'
+      grb_gi_18: '00FF7C'
+      grb_gi_19: '00FF7C'
+      grb_gi_20: '00FF7C'
+      grb_gi_21: '00FF7C'
+      rgb_bathtub_rect: '00FF7C'
+      rgb_lorbit_arrow: '00FF7C'
+      rgb_lorbit_circle: '00FF7C'
+      rgb_lramp_arrow: '00FF7C'
+      rgb_lramp_circle: '00FF7C'
+      rgb_lramp_ldiamond: '00FF7C'
+      rgb_lramp_rdiamond: '00FF7C'
+      rgb_mayor_arrow: '00FF7C'
+      rgb_mayor_c_circle: '00FF7C'
+      rgb_mayor_circle: '00FF7C'
+      rgb_santa_a: '00FF7C'
+      rgb_santa_s: '00FF7C'
+      rgb_zero_circle: '00FF7C'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: '00FF7C'
+      grb_gi_21: '000000'
+      rgb_charwiz_rect: '00FF7C'
+      rgb_christmastime_rect: '00FF7C'
+      rgb_sally_circle: '00FF7C'
+    
+- time: '+1'
+  lights:
+      grb_gi_18: '000000'
+      grb_gi_20: '000000'
+      rgb_doctor_circle: '00FF7C'
+      rgb_holiday_christmas: '00FF7C'
+      rgb_holiday_halloween: '00FF7C'
+      rgb_holiday_thanksgiving: '00FF7C'
+      rgb_jack_circle: '00FF7C'
+      rgb_lorbit_arrow: '000000'
+      rgb_lorbit_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_holiday_door: '00FF7C'
+      rgb_holiday_independence: '00FF7C'
+      rgb_holiday_valentine: '00FF7C'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: '00FF7C'
+      grb_gi_12: '00FF7C'
+      grb_gi_19: '000000'
+      rgb_holiday_easter: '00FF7C'
+      rgb_holiday_stpat: '00FF7C'
+      rgb_keepshooting: '00FF7C'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_ldiamond: '000000'
+      rgb_santa_n: '00FF7C'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: '00FF7C'
+      grb_gi_15: '000000'
+      rgb_lramp_circle: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_mayor_arrow: '000000'
+      rgb_mayor_circle: '000000'
+      rgb_santa_s: '000000'
+      rgb_zero_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_8: '00FF7C'
+      grb_gi_9: '00FF7C'
+      rgb_santa_a: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: '00FF7B'
+      grb_gi_11: '00FF7B'
+      grb_gi_12: '00FF7B'
+      grb_gi_13: '000000'
+      grb_gi_14: '00FF7B'
+      grb_gi_8: '00FF7B'
+      grb_gi_9: '00FF7B'
+      rgb_bathtub_rect: '000000'
+      rgb_charwiz_rect: '00FF7B'
+      rgb_christmastime_rect: '00FF7B'
+      rgb_doctor_circle: '00FF7B'
+      rgb_holiday_christmas: '00FF7B'
+      rgb_holiday_door: '00FF7B'
+      rgb_holiday_easter: '00FF7B'
+      rgb_holiday_halloween: '00FF7B'
+      rgb_holiday_independence: '00FF7B'
+      rgb_holiday_stpat: '00FF7B'
+      rgb_holiday_thanksgiving: '00FF7B'
+      rgb_holiday_valentine: '00FF7B'
+      rgb_jack_circle: '00FF7B'
+      rgb_keepshooting: '00FF7B'
+      rgb_mayor_c_circle: '000000'
+      rgb_sally_circle: '00FF7B'
+      rgb_santa_n: '00FF7B'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: '000000'
+      rgb_charwiz_rect: '000000'
+      rgb_christmastime_rect: '000000'
+      rgb_sally_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_doctor_circle: '000000'
+      rgb_holiday_christmas: '000000'
+      rgb_holiday_halloween: '000000'
+      rgb_holiday_thanksgiving: '000000'
+      rgb_jack_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_holiday_door: '000000'
+      rgb_holiday_independence: '000000'
+      rgb_holiday_valentine: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: '000000'
+      grb_gi_12: '000000'
+      rgb_holiday_easter: '000000'
+      rgb_holiday_stpat: '000000'
+      rgb_keepshooting: '000000'
+      rgb_santa_n: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_8: '000000'
+      grb_gi_9: '000000'
+    

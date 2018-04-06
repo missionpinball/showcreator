@@ -1,0 +1,967 @@
+# show_version=5
+- time: 0
+  lights:
+      grb_gi_25: 'FF00FF'
+      rgb_backtree_1: 'FF00FF'
+      rgb_backtree_2: 'FF00FF'
+      rgb_backtree_3: 'FF00FF'
+      rgb_backtree_4: 'FF00FF'
+      rgb_backtree_5: 'FF00FF'
+      rgb_backtree_6: 'FF00FF'
+      rgb_backtree_7: 'FF00FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: 'FF00FF'
+      rgb_backtree_1: '000000'
+      rgb_backtree_2: '000000'
+      rgb_backtree_3: '000000'
+      rgb_backtree_4: '000000'
+      rgb_backtree_5: '000000'
+      rgb_backtree_6: '000000'
+      rgb_backtree_7: '000000'
+      rgb_pops_flasher: 'FF00FF'
+      rgb_pops_flasher2: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_25: '000000'
+      rgb_pops_flasher3: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: 'FF00FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '000000'
+      rgb_jack_saucer: 'FF00FF'
+      rgb_oogie_cw_arrow: 'FF00FF'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_3: 'FF00FF'
+      rgb_oogie_ccw_arrow: 'FF00FF'
+      rgb_pops_flasher3: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: 'FF00FF'
+      grb_gi_24: 'FF00FF'
+      rgb_oogie_ccw_circle: 'FF00FF'
+      rgb_oogie_cw_circle: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '000000'
+      rgb_bug_3: 'FF00FF'
+      rgb_grave_arrow: 'FF00FF'
+      rgb_leftloop_arrow: 'FF00FF'
+      rgb_leftloop_circle: 'FF00FF'
+      rgb_mystery_rect: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      rgb_bug_1: 'FF00FF'
+      rgb_bug_2: 'FF00FF'
+      rgb_grave_circle: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'FF00FF'
+      rgb_barrel_rect: 'FF00FF'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_oogie_mode_6: 'FF00FF'
+      rgb_rorbit_arrow: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '000000'
+      grb_gi_21: 'FF00FF'
+      grb_gi_3: '000000'
+      grb_gi_4: 'FF00FF'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_oogie_cw_circle: '000000'
+      rgb_oogie_mode_4: 'FF00FF'
+      rgb_oogie_mode_5: 'FF00FF'
+      rgb_rorbit_circle: 'FF00FF'
+      rgb_rramp_arrow: 'FF00FF'
+      rgb_rramp_ldiamond: 'FF00FF'
+      rgb_shock_rect: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_24: '000000'
+      rgb_leftloop_arrow: '000000'
+      rgb_lock_rect: 'FF00FF'
+      rgb_oogie_mode_3: 'FF00FF'
+      rgb_rramp_circle: 'FF00FF'
+      rgb_rramp_rdiamond: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: 'FF00FF'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_bug_3: '000000'
+      rgb_grave_arrow: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_lorbit_arrow: 'FF00FF'
+      rgb_mystery_rect: '000000'
+      rgb_oogie_mode_2: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_20: 'FF00FF'
+      grb_gi_22: '000000'
+      rgb_grave_circle: '000000'
+      rgb_lorbit_circle: 'FF00FF'
+      rgb_lramp_rdiamond: 'FF00FF'
+      rgb_oogie_mode_1: 'FF00FF'
+      rgb_oogie_mode_6: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_4: '000000'
+      grb_gi_6: 'FF00FF'
+      rgb_barrel_rect: '000000'
+      rgb_lramp_arrow: 'FF00FF'
+      rgb_lramp_ldiamond: 'FF00FF'
+      rgb_oogie_mode_5: '000000'
+      rgb_oogie_moon: 'FF00FF'
+      rgb_oogie_moon2: 'FF00FF'
+      rgb_rorbit_arrow: '000000'
+      rgb_rramp_ldiamond: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_21: '000000'
+      rgb_lramp_circle: 'FF00FF'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_moon3: 'FF00FF'
+      rgb_rorbit_circle: '000000'
+      rgb_rramp_arrow: '000000'
+      rgb_shock_rect: '000000'
+      rgb_soup_arrow: 'FF00FF'
+      rgb_soup_circle: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      rgb_lock_rect: '000000'
+      rgb_lorbit_arrow: '000000'
+      rgb_oogie_mode_3: '000000'
+      rgb_rramp_circle: '000000'
+      rgb_rramp_rdiamond: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_19: 'FF00FF'
+      grb_gi_5: '000000'
+      rgb_bathtub_rect: 'FF00FF'
+      rgb_doctor_circle: 'FF00FF'
+      rgb_doctor_rect: 'FF00FF'
+      rgb_lorbit_circle: '000000'
+      rgb_mayor_arrow: 'FF00FF'
+      rgb_mayor_circle: 'FF00FF'
+      rgb_oogie_mode_1: '000000'
+      rgb_oogie_mode_2: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_20: '000000'
+      grb_gi_7: 'FF00FF'
+      rgb_charwiz_rect: 'FF00FF'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_mayor_c_circle: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: '000000'
+      rgb_christmastime_rect: 'FF00FF'
+      rgb_lramp_ldiamond: '000000'
+      rgb_oogie_moon: '000000'
+      rgb_oogie_moon2: '000000'
+      rgb_oogie_moon3: '000000'
+      rgb_santa_a: 'FF00FF'
+      rgb_santa_b: 'FF00FF'
+      rgb_santa_n: 'FF00FF'
+      rgb_santa_s: 'FF00FF'
+      rgb_santa_t: 'FF00FF'
+      rgb_soup_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_jack_circle: 'FF00FF'
+      rgb_lramp_circle: '000000'
+      rgb_sally_circle: 'FF00FF'
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_12: 'FF00FF'
+      grb_gi_13: 'FF00FF'
+      rgb_doctor_rect: '000000'
+      rgb_holiday_christmas: 'FF00FF'
+      rgb_mayor_arrow: '000000'
+      rgb_zero_circle: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: 'FF00FF'
+      grb_gi_14: 'FF00FF'
+      grb_gi_18: 'FF00FF'
+      grb_gi_19: '000000'
+      rgb_bathtub_rect: '000000'
+      rgb_doctor_circle: '000000'
+      rgb_holiday_thanksgiving: 'FF00FF'
+      rgb_holiday_valentine: 'FF00FF'
+      rgb_mayor_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_17: 'FF00FF'
+      grb_gi_7: '000000'
+      grb_gi_8: 'FF00FF'
+      rgb_charwiz_rect: '000000'
+      rgb_holiday_door: 'FF00FF'
+      rgb_holiday_halloween: 'FF00FF'
+      rgb_holiday_stpat: 'FF00FF'
+      rgb_mayor_c_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: 'FF00FF'
+      grb_gi_15: 'FF00FF'
+      grb_gi_16: 'FF00FF'
+      grb_gi_9: 'FF00FF'
+      rgb_christmastime_rect: '000000'
+      rgb_holiday_easter: 'FF00FF'
+      rgb_holiday_independence: 'FF00FF'
+      rgb_santa_a: '000000'
+      rgb_santa_b: '000000'
+      rgb_santa_n: '000000'
+      rgb_santa_s: '000000'
+      rgb_santa_t: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_12: '000000'
+      rgb_jack_circle: '000000'
+      rgb_sally_circle: '000000'
+      rgb_zero_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: '000000'
+      grb_gi_18: '000000'
+      rgb_holiday_christmas: '000000'
+      rgb_holiday_thanksgiving: '000000'
+      rgb_holiday_valentine: '000000'
+      rgb_keepshooting: 'FF00FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '0000FF'
+      rgb_pops_flasher: '0000FF'
+      rgb_pops_flasher2: '0000FF'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher3: '0000FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '0000FF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '000000'
+      rgb_jack_saucer: '0000FF'
+      rgb_oogie_cw_arrow: '0000FF'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_ccw_arrow: '0000FF'
+      rgb_pops_flasher3: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '0000FF'
+      grb_gi_3: '0000FF'
+      rgb_oogie_ccw_circle: '0000FF'
+      rgb_oogie_cw_circle: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '000000'
+      grb_gi_24: '0000FF'
+      rgb_leftloop_arrow: '0000FF'
+    
+- time: '+1'
+  lights:
+      rgb_bug_2: '0000FF'
+      rgb_bug_3: '0000FF'
+      rgb_grave_arrow: '0000FF'
+      rgb_leftloop_circle: '0000FF'
+      rgb_mystery_rect: '0000FF'
+    
+- time: '+1'
+  lights:
+      rgb_bug_1: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '0000FF'
+      rgb_grave_circle: '0000FF'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_oogie_mode_6: '0000FF'
+      rgb_rorbit_arrow: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '000000'
+      grb_gi_3: '000000'
+      grb_gi_4: '0000FF'
+      rgb_barrel_rect: '0000FF'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_oogie_cw_circle: '000000'
+      rgb_oogie_mode_5: '0000FF'
+      rgb_rramp_ldiamond: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_21: '0000FF'
+      grb_gi_24: '000000'
+      rgb_oogie_mode_4: '0000FF'
+      rgb_rorbit_circle: '0000FF'
+      rgb_rramp_arrow: '0000FF'
+      rgb_shock_rect: '0000FF'
+    
+- time: '+1'
+  lights:
+      rgb_grave_arrow: '000000'
+      rgb_leftloop_arrow: '000000'
+      rgb_lock_rect: '0000FF'
+      rgb_mystery_rect: '000000'
+      rgb_oogie_mode_3: '0000FF'
+      rgb_rramp_circle: '0000FF'
+      rgb_rramp_rdiamond: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: '0000FF'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_bug_3: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_lorbit_arrow: '0000FF'
+      rgb_oogie_mode_2: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '000000'
+      rgb_grave_circle: '000000'
+      rgb_lorbit_circle: '0000FF'
+      rgb_oogie_mode_1: '0000FF'
+      rgb_oogie_mode_6: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_20: '0000FF'
+      rgb_barrel_rect: '000000'
+      rgb_lramp_arrow: '0000FF'
+      rgb_lramp_rdiamond: '0000FF'
+      rgb_oogie_mode_5: '000000'
+      rgb_oogie_moon2: '0000FF'
+      rgb_rorbit_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_21: '000000'
+      grb_gi_4: '000000'
+      grb_gi_6: '0000FF'
+      rgb_lramp_ldiamond: '0000FF'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_moon: '0000FF'
+      rgb_rorbit_circle: '000000'
+      rgb_rramp_arrow: '000000'
+      rgb_rramp_ldiamond: '000000'
+      rgb_shock_rect: '000000'
+      rgb_soup_arrow: '0000FF'
+    
+- time: '+1'
+  lights:
+      rgb_lock_rect: '000000'
+      rgb_lramp_circle: '0000FF'
+      rgb_oogie_mode_3: '000000'
+      rgb_oogie_moon3: '0000FF'
+      rgb_rramp_rdiamond: '000000'
+      rgb_soup_circle: '0000FF'
+    
+- time: '+1'
+  lights:
+      rgb_lorbit_arrow: '000000'
+      rgb_oogie_mode_2: '000000'
+      rgb_rramp_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: '000000'
+      rgb_bathtub_rect: '0000FF'
+      rgb_doctor_circle: '0000FF'
+      rgb_doctor_rect: '0000FF'
+      rgb_lorbit_circle: '000000'
+      rgb_mayor_arrow: '0000FF'
+      rgb_oogie_mode_1: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_19: '0000FF'
+      grb_gi_20: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_mayor_c_circle: '0000FF'
+      rgb_mayor_circle: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: '000000'
+      grb_gi_7: '0000FF'
+      rgb_charwiz_rect: '0000FF'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_ldiamond: '000000'
+      rgb_oogie_moon: '000000'
+      rgb_oogie_moon2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_christmastime_rect: '0000FF'
+      rgb_lramp_circle: '000000'
+      rgb_oogie_moon3: '000000'
+      rgb_santa_a: '0000FF'
+      rgb_santa_b: '0000FF'
+      rgb_santa_n: '0000FF'
+      rgb_santa_s: '0000FF'
+      rgb_santa_t: '0000FF'
+      rgb_soup_arrow: '000000'
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_jack_circle: '0000FF'
+      rgb_sally_circle: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_12: '0000FF'
+      grb_gi_13: '0000FF'
+      rgb_bathtub_rect: '000000'
+      rgb_doctor_rect: '000000'
+      rgb_mayor_arrow: '000000'
+      rgb_zero_circle: '0000FF'
+    
+- time: '+1'
+  lights:
+      grb_gi_18: '0000FF'
+      grb_gi_19: '000000'
+      rgb_doctor_circle: '000000'
+      rgb_holiday_christmas: '0000FF'
+      rgb_holiday_thanksgiving: '0000FF'
+      rgb_holiday_valentine: '0000FF'
+      rgb_mayor_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '00FFFF'
+      grb_gi_25: '00FFFF'
+      rgb_pops_flasher: '00FFFF'
+      rgb_pops_flasher2: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_25: '000000'
+      rgb_pops_flasher3: '00FFFF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '00FFFF'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '000000'
+      rgb_pops_flasher2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_jack_saucer: '00FFFF'
+      rgb_oogie_ccw_arrow: '00FFFF'
+      rgb_oogie_cw_arrow: '00FFFF'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher3: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '00FFFF'
+      grb_gi_3: '00FFFF'
+      rgb_oogie_cw_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_24: '00FFFF'
+      rgb_oogie_ccw_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '000000'
+      rgb_grave_arrow: '00FFFF'
+      rgb_leftloop_arrow: '00FFFF'
+      rgb_mystery_rect: '00FFFF'
+    
+- time: '+1'
+  lights:
+      rgb_bug_1: '00FFFF'
+      rgb_bug_2: '00FFFF'
+      rgb_bug_3: '00FFFF'
+      rgb_leftloop_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      rgb_grave_circle: '00FFFF'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_oogie_mode_6: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '00FFFF'
+      rgb_barrel_rect: '00FFFF'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_rorbit_arrow: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '000000'
+      grb_gi_21: '00FFFF'
+      grb_gi_3: '000000'
+      grb_gi_4: '00FFFF'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_oogie_cw_circle: '000000'
+      rgb_oogie_mode_5: '00FFFF'
+      rgb_rramp_ldiamond: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_24: '000000'
+      rgb_oogie_mode_4: '00FFFF'
+      rgb_rorbit_circle: '00FFFF'
+      rgb_rramp_arrow: '00FFFF'
+      rgb_shock_rect: '00FFFF'
+    
+- time: '+1'
+  lights:
+      rgb_bug_3: '000000'
+      rgb_grave_arrow: '000000'
+      rgb_leftloop_arrow: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_lock_rect: '00FFFF'
+      rgb_mystery_rect: '000000'
+      rgb_oogie_mode_3: '00FFFF'
+      rgb_rramp_circle: '00FFFF'
+      rgb_rramp_rdiamond: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: '00FFFF'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_lorbit_arrow: '00FFFF'
+      rgb_oogie_mode_2: '00FFFF'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '000000'
+      rgb_grave_circle: '000000'
+      rgb_lorbit_circle: '00FFFF'
+      rgb_oogie_mode_1: '00FFFF'
+      rgb_oogie_mode_6: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_20: '00FFFF'
+      rgb_barrel_rect: '000000'
+      rgb_lramp_arrow: '00FFFF'
+      rgb_lramp_rdiamond: '00FFFF'
+      rgb_oogie_mode_5: '000000'
+      rgb_rorbit_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_21: '000000'
+      grb_gi_4: '000000'
+      grb_gi_6: '00FFFF'
+      rgb_lramp_ldiamond: '00FFFF'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_moon: '00FFFF'
+      rgb_oogie_moon2: '00FFFF'
+      rgb_rorbit_circle: '000000'
+      rgb_rramp_arrow: '000000'
+      rgb_rramp_ldiamond: '000000'
+      rgb_shock_rect: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_lramp_circle: '00FFFF'
+      rgb_oogie_moon3: '00FFFF'
+      rgb_rramp_rdiamond: '000000'
+      rgb_soup_arrow: '00FFFF'
+      rgb_soup_circle: '00FFFF'
+    
+- time: '+1'
+  lights:
+      rgb_lock_rect: '000000'
+      rgb_lorbit_arrow: '000000'
+      rgb_oogie_mode_3: '000000'
+      rgb_rramp_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: '000000'
+      rgb_bathtub_rect: '00FFFF'
+      rgb_doctor_rect: '00FFFF'
+      rgb_mayor_arrow: '00FFFF'
+      rgb_oogie_mode_2: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_19: '00FFFF'
+      grb_gi_20: '000000'
+      rgb_doctor_circle: '00FFFF'
+      rgb_lorbit_circle: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_mayor_circle: '00FFFF'
+      rgb_oogie_mode_1: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '00FF00'
+      grb_gi_25: '00FF00'
+      rgb_pops_flasher: '00FF00'
+      rgb_pops_flasher2: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_25: '000000'
+      rgb_pops_flasher3: '00FF00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '00FF00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '000000'
+      rgb_jack_saucer: '00FF00'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_ccw_arrow: '00FF00'
+      rgb_oogie_cw_arrow: '00FF00'
+      rgb_pops_flasher3: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '00FF00'
+      grb_gi_3: '00FF00'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_ccw_circle: '00FF00'
+      rgb_oogie_cw_circle: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '000000'
+      grb_gi_24: '00FF00'
+      rgb_leftloop_arrow: '00FF00'
+    
+- time: '+1'
+  lights:
+      rgb_bug_2: '00FF00'
+      rgb_bug_3: '00FF00'
+      rgb_grave_arrow: '00FF00'
+      rgb_leftloop_circle: '00FF00'
+      rgb_mystery_rect: '00FF00'
+    
+- time: '+1'
+  lights:
+      rgb_bug_1: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '00FF00'
+      rgb_grave_circle: '00FF00'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_oogie_mode_6: '00FF00'
+    
+- time: '+1'
+  lights:
+      rgb_barrel_rect: '00FF00'
+      rgb_oogie_mode_5: '00FF00'
+      rgb_rorbit_arrow: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '000000'
+      grb_gi_21: '00FF00'
+      grb_gi_3: '000000'
+      grb_gi_4: '00FF00'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_oogie_cw_circle: '000000'
+      rgb_rramp_ldiamond: '00FF00'
+      rgb_shock_rect: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_24: '000000'
+      rgb_oogie_mode_4: '00FF00'
+      rgb_rorbit_circle: '00FF00'
+      rgb_rramp_arrow: '00FF00'
+    
+- time: '+1'
+  lights:
+      rgb_grave_arrow: '000000'
+      rgb_leftloop_arrow: '000000'
+      rgb_lock_rect: '00FF00'
+      rgb_mystery_rect: '000000'
+      rgb_oogie_mode_3: '00FF00'
+      rgb_rramp_circle: '00FF00'
+      rgb_rramp_rdiamond: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: '00FF00'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_bug_3: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_lorbit_arrow: '00FF00'
+      rgb_oogie_mode_2: '00FF00'
+    
+- time: '+1'
+  lights:
+      rgb_grave_circle: '000000'
+      rgb_lorbit_circle: '00FF00'
+      rgb_oogie_mode_1: '00FF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_20: '00FF00'
+      grb_gi_22: '000000'
+      rgb_barrel_rect: '000000'
+      rgb_lramp_rdiamond: '00FF00'
+      rgb_oogie_mode_6: '000000'
+      rgb_rorbit_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: 'FFFF00'
+      grb_gi_25: 'FFFF00'
+      rgb_pops_flasher: 'FFFF00'
+      rgb_pops_flasher2: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_25: '000000'
+      rgb_pops_flasher3: 'FFFF00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: 'FFFF00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '000000'
+      rgb_jack_saucer: 'FFFF00'
+      rgb_oogie_ccw_arrow: 'FFFF00'
+      rgb_oogie_cw_arrow: 'FFFF00'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher3: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: 'FFFF00'
+      grb_gi_3: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_ccw_circle: 'FFFF00'
+      rgb_oogie_cw_circle: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '000000'
+      grb_gi_24: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      rgb_grave_arrow: 'FFFF00'
+      rgb_leftloop_arrow: 'FFFF00'
+      rgb_mystery_rect: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      rgb_bug_1: 'FFFF00'
+      rgb_bug_2: 'FFFF00'
+      rgb_bug_3: 'FFFF00'
+      rgb_leftloop_circle: 'FFFF00'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'FFFF00'
+      rgb_grave_circle: 'FFFF00'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_oogie_mode_6: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      rgb_barrel_rect: 'FFFF00'
+      rgb_rorbit_arrow: 'FFFF00'
+    
+- time: '+1'
+  lights:
+      grb_gi_25: 'FF0000'
+      rgb_backtree_1: 'FF0000'
+      rgb_backtree_2: 'FF0000'
+      rgb_backtree_3: 'FF0000'
+      rgb_backtree_4: 'FF0000'
+      rgb_backtree_5: 'FF0000'
+      rgb_backtree_6: 'FF0000'
+      rgb_backtree_7: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: 'FF0000'
+      rgb_pops_flasher: 'FF0000'
+      rgb_pops_flasher2: 'FF0000'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher3: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: 'FF0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      rgb_jack_saucer: 'FF0000'
+      rgb_oogie_ccw_arrow: 'FF0000'
+      rgb_oogie_cw_arrow: 'FF0000'
+    
+- time: '+16'

@@ -1,0 +1,6 @@
+# show_version=4
+- time: 0
+  leds:
+      grb_gi_13: 'FFFDFB'
+      grb_gi_14: 'FFFDFB'
+    

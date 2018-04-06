@@ -1,0 +1,481 @@
+# show_version=5
+- time: 0
+  lights:
+      (leds): 'FF0000'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0C00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF1900'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF2600'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF3300'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF3F00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF4C00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF5900'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF6600'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF7200'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF7F00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF8C00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF9900'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFA500'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFB200'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFBF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFCC00'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFD800'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFE500'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFF200'
+    
+- time: '+1'
+  lights:
+      (leds): 'FFFF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'F2FF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'E5FF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'D8FF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'CCFF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'BFFF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'B2FF00'
+    
+- time: '+1'
+  lights:
+      (leds): 'A5FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '99FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '8CFF00'
+    
+- time: '+1'
+  lights:
+      (leds): '7FFF00'
+    
+- time: '+1'
+  lights:
+      (leds): '72FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '66FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '59FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '4CFF00'
+    
+- time: '+1'
+  lights:
+      (leds): '3FFF00'
+    
+- time: '+1'
+  lights:
+      (leds): '33FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '26FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '19FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '0CFF00'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF00'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF0C'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF19'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF26'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF33'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF3F'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF4C'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF59'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF66'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF72'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF7F'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF8C'
+    
+- time: '+1'
+  lights:
+      (leds): '00FF99'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFA5'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFB2'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFBF'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFCC'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFD8'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFE5'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFF2'
+    
+- time: '+1'
+  lights:
+      (leds): '00FFFF'
+    
+- time: '+1'
+  lights:
+      (leds): '00F2FF'
+    
+- time: '+1'
+  lights:
+      (leds): '00E5FF'
+    
+- time: '+1'
+  lights:
+      (leds): '00D8FF'
+    
+- time: '+1'
+  lights:
+      (leds): '00CCFF'
+    
+- time: '+1'
+  lights:
+      (leds): '00BFFF'
+    
+- time: '+1'
+  lights:
+      (leds): '00B2FF'
+    
+- time: '+1'
+  lights:
+      (leds): '00A5FF'
+    
+- time: '+1'
+  lights:
+      (leds): '0099FF'
+    
+- time: '+1'
+  lights:
+      (leds): '008CFF'
+    
+- time: '+1'
+  lights:
+      (leds): '007FFF'
+    
+- time: '+1'
+  lights:
+      (leds): '0072FF'
+    
+- time: '+1'
+  lights:
+      (leds): '0066FF'
+    
+- time: '+1'
+  lights:
+      (leds): '0059FF'
+    
+- time: '+1'
+  lights:
+      (leds): '004CFF'
+    
+- time: '+1'
+  lights:
+      (leds): '003FFF'
+    
+- time: '+1'
+  lights:
+      (leds): '0033FF'
+    
+- time: '+1'
+  lights:
+      (leds): '0026FF'
+    
+- time: '+1'
+  lights:
+      (leds): '0019FF'
+    
+- time: '+1'
+  lights:
+      (leds): '000CFF'
+    
+- time: '+1'
+  lights:
+      (leds): '0000FF'
+    
+- time: '+1'
+  lights:
+      (leds): '0C00FF'
+    
+- time: '+1'
+  lights:
+      (leds): '1900FF'
+    
+- time: '+1'
+  lights:
+      (leds): '2600FF'
+    
+- time: '+1'
+  lights:
+      (leds): '3300FF'
+    
+- time: '+1'
+  lights:
+      (leds): '3F00FF'
+    
+- time: '+1'
+  lights:
+      (leds): '4C00FF'
+    
+- time: '+1'
+  lights:
+      (leds): '5900FF'
+    
+- time: '+1'
+  lights:
+      (leds): '6600FF'
+    
+- time: '+1'
+  lights:
+      (leds): '7200FF'
+    
+- time: '+1'
+  lights:
+      (leds): '7F00FF'
+    
+- time: '+1'
+  lights:
+      (leds): '8C00FF'
+    
+- time: '+1'
+  lights:
+      (leds): '9900FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'A500FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'B200FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'BF00FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'CC00FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'D800FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'E500FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'F200FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00FF'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00F2'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00E5'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00D8'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00CC'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00BF'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00B2'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF00A5'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0099'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF008C'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF007F'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0072'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0066'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0059'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF004C'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF003F'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0033'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0026'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF0019'
+    
+- time: '+1'
+  lights:
+      (leds): 'FF000C'
+    

@@ -1,0 +1,148 @@
+# show_version=4
+- time: 0
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_1: '030000-f100'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_ccw_arrow: '040000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_2: 'FF0000-f100'
+      rgb_oogie_ccw_arrow: 'FF0000-f100'
+      rgb_oogie_ccw_circle: 'FA0000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_2: 'E60000-f100'
+      rgb_grave_arrow: 'FF0000-f100'
+      rgb_mystery_rect: 'FF0000-f100'
+      rgb_oogie_ccw_circle: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_bug_3: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_grave_circle: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_bug_2: 'A40000-f100'
+      rgb_oogie_mode_6: 'FF0000-f100'
+      rgb_rramp_ldiamond: 'FA0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_mode_4: 'FF0000-f100'
+      rgb_oogie_mode_5: 'FF0000-f100'
+      rgb_rramp_ldiamond: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_mode_2: 'F60000-f100'
+      rgb_oogie_mode_3: 'FF0000-f100'
+      rgb_rramp_ldiamond: 'D80000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_mode_1: 'FF0000-f100'
+      rgb_oogie_mode_2: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_moon: 'FF0000-f100'
+      rgb_oogie_moon2: '010000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_oogie_moon2: 'FF0000-f100'
+      rgb_oogie_moon3: 'AE0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_lramp_rdiamond: 'FF0000-f100'
+      rgb_oogie_moon3: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: 'A80000-f100'
+      rgb_lramp_circle: 'FF0000-f100'
+      rgb_lramp_rdiamond: '110000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      rgb_mayor_c_circle: 'FF0000-f100'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      rgb_christmastime_rect: '1E0000-f100'
+      rgb_mayor_circle: '060000-f100'
+      rgb_sally_circle: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_13: '4C0000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_13: 'FF0000-f100'
+      grb_gi_14: '9C0000-f100'
+      rgb_holiday_thanksgiving: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_14: 'FF0000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_16: 'FF0000-f100'
+      rgb_holiday_halloween: 'A40000-f100'
+    
+- time: '+1'
+  leds:
+      grb_gi_15: 'FF0000-f100'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_15: 'E30000-f100'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    

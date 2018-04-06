@@ -1,0 +1,423 @@
+# show_version=5
+- time: 0
+  lights:
+      grb_gi_1: '000000'
+      grb_gi_10: '000000'
+      grb_gi_11: '000000'
+      grb_gi_12: '000000'
+      grb_gi_13: '000000'
+      grb_gi_14: '000000'
+      grb_gi_15: '000000'
+      grb_gi_16: '000000'
+      grb_gi_17: '000000'
+      grb_gi_18: '000000'
+      grb_gi_19: '000000'
+      grb_gi_2: '000000'
+      grb_gi_20: '000000'
+      grb_gi_21: '000000'
+      grb_gi_22: '000000'
+      grb_gi_23: '000000'
+      grb_gi_24: '000000'
+      grb_gi_3: '000000'
+      grb_gi_4: '000000'
+      grb_gi_5: '000000'
+      grb_gi_6: '000000'
+      grb_gi_7: '000000'
+      grb_gi_8: '000000'
+      grb_gi_9: '000000'
+      rgb_barrel_rect: '000000'
+      rgb_bathtub_rect: '000000'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_bug_3: '000000'
+      rgb_charwiz_rect: '000000'
+      rgb_christmastime_rect: '000000'
+      rgb_doctor_circle: '000000'
+      rgb_doctor_rect: '000000'
+      rgb_grave_arrow: '000000'
+      rgb_grave_circle: '000000'
+      rgb_holiday_christmas: '000000'
+      rgb_holiday_door: '000000'
+      rgb_holiday_easter: '000000'
+      rgb_holiday_halloween: '000000'
+      rgb_holiday_independence: '000000'
+      rgb_holiday_stpat: '000000'
+      rgb_holiday_thanksgiving: '000000'
+      rgb_holiday_valentine: '000000'
+      rgb_jack_circle: '000000'
+      rgb_jack_saucer: '000000'
+      rgb_keepshooting: '000000'
+      rgb_leftloop_arrow: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_lock_rect: '000000'
+      rgb_lorbit_arrow: '000000'
+      rgb_lorbit_circle: '000000'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_circle: '000000'
+      rgb_lramp_ldiamond: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_mayor_arrow: '000000'
+      rgb_mayor_c_circle: '000000'
+      rgb_mayor_circle: '000000'
+      rgb_mystery_rect: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_oogie_cw_circle: '000000'
+      rgb_oogie_mode_2: '000000'
+      rgb_oogie_mode_3: '000000'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_mode_5: '000000'
+      rgb_oogie_mode_6: '000000'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '000000'
+      rgb_pops_flasher3: '000000'
+      rgb_rorbit_arrow: '000000'
+      rgb_rorbit_circle: '000000'
+      rgb_rramp_arrow: '000000'
+      rgb_rramp_circle: '000000'
+      rgb_rramp_ldiamond: '000000'
+      rgb_rramp_rdiamond: '000000'
+      rgb_sally_circle: '000000'
+      rgb_santa_a: '000000'
+      rgb_santa_b: '000000'
+      rgb_santa_n: '000000'
+      rgb_santa_s: '000000'
+      rgb_santa_t: '000000'
+      rgb_shock_rect: '000000'
+      rgb_soup_arrow: '000000'
+      rgb_zero_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_mode_2: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      rgb_bathtub_rect: 'FF00FD'
+      rgb_doctor_circle: 'FF00FD'
+      rgb_lramp_circle: '770076'
+      rgb_lramp_rdiamond: 'FF00FD'
+      rgb_oogie_mode_3: 'FF00FD'
+      rgb_soup_arrow: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      rgb_charwiz_rect: 'FF00FD'
+      rgb_doctor_rect: 'FF00FD'
+      rgb_lock_rect: 'C000BE'
+      rgb_lramp_arrow: 'FF00FD'
+      rgb_lramp_circle: 'FF00FD'
+      rgb_oogie_mode_4: 'C500C3'
+      rgb_rramp_circle: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      rgb_christmastime_rect: 'DD00DC'
+      rgb_lock_rect: 'FF00FD'
+      rgb_mayor_c_circle: 'FF00FD'
+      rgb_oogie_mode_4: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      rgb_christmastime_rect: 'FF00FD'
+      rgb_jack_circle: 'FF00FD'
+      rgb_lramp_ldiamond: 'FF00FD'
+      rgb_oogie_mode_5: 'FF00FD'
+      rgb_rramp_arrow: 'FF00FD'
+      rgb_rramp_ldiamond: 'FF00FD'
+      rgb_rramp_rdiamond: 'FF00FD'
+      rgb_shock_rect: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: 'FF00FD'
+      rgb_barrel_rect: 'FF00FD'
+      rgb_grave_circle: '530052'
+      rgb_mayor_arrow: '010001'
+      rgb_mayor_circle: 'FF00FD'
+      rgb_oogie_mode_6: 'FF00FD'
+      rgb_sally_circle: 'FF00FD'
+      rgb_santa_n: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_12: 'FF00FD'
+      grb_gi_5: 'FF00FD'
+      grb_gi_7: '430042'
+      rgb_bug_1: '2F002E'
+      rgb_bug_2: 'FF00FD'
+      rgb_bug_3: 'FF00FD'
+      rgb_grave_circle: 'FF00FD'
+      rgb_holiday_christmas: 'FF00FD'
+      rgb_lorbit_circle: 'F000EE'
+      rgb_mayor_arrow: 'FF00FD'
+      rgb_santa_t: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'FF00FD'
+      grb_gi_7: 'FF00FD'
+      rgb_bug_1: 'FF00FD'
+      rgb_grave_arrow: 'DA00D8'
+      rgb_holiday_thanksgiving: 'FF00FD'
+      rgb_holiday_valentine: 'FF00FD'
+      rgb_leftloop_circle: 'FF00FD'
+      rgb_lorbit_circle: 'FF00FD'
+      rgb_mystery_rect: 'FF00FD'
+      rgb_rorbit_circle: 'FF00FD'
+      rgb_santa_a: 'FF00FD'
+      rgb_santa_b: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: 'FF00FD'
+      grb_gi_13: 'FF00FD'
+      grb_gi_20: 'FF00FD'
+      grb_gi_21: 'FF00FD'
+      grb_gi_4: '5E005D'
+      rgb_grave_arrow: 'FF00FD'
+      rgb_holiday_door: 'FF00FD'
+      rgb_holiday_stpat: 'FF00FD'
+      rgb_lorbit_arrow: 'FF00FD'
+      rgb_rorbit_arrow: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: 'FF00FD'
+      grb_gi_19: 'FF00FD'
+      grb_gi_4: 'FF00FD'
+      rgb_holiday_halloween: 'FF00FD'
+      rgb_leftloop_arrow: 'FF00FD'
+      rgb_oogie_ccw_circle: 'FF00FD'
+      rgb_santa_s: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: 'FF00FD'
+      grb_gi_9: 'FF00FD'
+      rgb_holiday_easter: 'FF00FD'
+      rgb_holiday_independence: 'FF00FD'
+      rgb_oogie_ccw_arrow: 'F300F1'
+      rgb_oogie_cw_circle: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: 'FF00FD'
+      grb_gi_18: 'F200F0'
+      grb_gi_24: 'FF00FD'
+      grb_gi_8: 'FF00FD'
+      rgb_oogie_ccw_arrow: 'FF00FD'
+      rgb_oogie_cw_arrow: '490048'
+      rgb_zero_circle: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_15: 'FF00FD'
+      grb_gi_16: 'FF00FD'
+      grb_gi_18: 'FF00FD'
+      grb_gi_3: 'FF00FD'
+      rgb_jack_saucer: 'FF00FD'
+      rgb_oogie_cw_arrow: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      grb_gi_17: 'FF00FD'
+      rgb_keepshooting: 'FF00FD'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher3: '180018'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: 'FF00FD'
+      rgb_pops_flasher2: '0E000E'
+      rgb_pops_flasher3: 'FF00FD'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher: 'FF00FD'
+      rgb_pops_flasher2: 'FF00FD'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '0E000E'
+    
+- time: '+1'
+  lights:
+      grb_gi_23: '000000'
+      rgb_pops_flasher2: '000000'
+      rgb_pops_flasher3: '180018'
+    
+- time: '+1'
+  lights:
+      rgb_pops_flasher3: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_1: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_17: '000000'
+      rgb_keepshooting: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_15: '000000'
+      grb_gi_16: '000000'
+      grb_gi_18: 'F200F0'
+      grb_gi_3: '000000'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_cw_arrow: '490048'
+    
+- time: '+1'
+  lights:
+      grb_gi_10: '000000'
+      grb_gi_18: '000000'
+      grb_gi_24: '000000'
+      grb_gi_8: '000000'
+      rgb_oogie_ccw_arrow: 'F300F1'
+      rgb_oogie_cw_arrow: '000000'
+      rgb_zero_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_2: '000000'
+      grb_gi_9: '000000'
+      rgb_holiday_easter: '000000'
+      rgb_holiday_independence: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_cw_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: '000000'
+      grb_gi_19: '000000'
+      grb_gi_4: '5E005D'
+      rgb_holiday_halloween: '000000'
+      rgb_leftloop_arrow: '000000'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_santa_s: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_11: '000000'
+      grb_gi_13: '000000'
+      grb_gi_20: '000000'
+      grb_gi_21: '000000'
+      grb_gi_4: '000000'
+      rgb_grave_arrow: 'DA00D8'
+      rgb_holiday_door: '000000'
+      rgb_holiday_stpat: '000000'
+      rgb_lorbit_arrow: '000000'
+      rgb_rorbit_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '000000'
+      grb_gi_7: '430042'
+      rgb_bug_1: '2F002E'
+      rgb_grave_arrow: '000000'
+      rgb_holiday_thanksgiving: '000000'
+      rgb_holiday_valentine: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_lorbit_circle: 'F000EE'
+      rgb_mystery_rect: '000000'
+      rgb_rorbit_circle: '000000'
+      rgb_santa_a: '000000'
+      rgb_santa_b: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_12: '000000'
+      grb_gi_5: '000000'
+      grb_gi_7: '000000'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_bug_3: '000000'
+      rgb_grave_circle: '530052'
+      rgb_holiday_christmas: '000000'
+      rgb_lorbit_circle: '000000'
+      rgb_mayor_arrow: '010001'
+      rgb_santa_t: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: '000000'
+      rgb_barrel_rect: '000000'
+      rgb_grave_circle: '000000'
+      rgb_mayor_arrow: '000000'
+      rgb_mayor_circle: '000000'
+      rgb_oogie_mode_6: '000000'
+      rgb_sally_circle: '000000'
+      rgb_santa_n: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_christmastime_rect: 'DD00DC'
+      rgb_jack_circle: '000000'
+      rgb_lramp_ldiamond: '000000'
+      rgb_oogie_mode_5: '000000'
+      rgb_rramp_arrow: '000000'
+      rgb_rramp_ldiamond: '000000'
+      rgb_rramp_rdiamond: '000000'
+      rgb_shock_rect: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_christmastime_rect: '000000'
+      rgb_lock_rect: 'C000BE'
+      rgb_mayor_c_circle: '000000'
+      rgb_oogie_mode_4: 'C500C3'
+    
+- time: '+1'
+  lights:
+      rgb_charwiz_rect: '000000'
+      rgb_doctor_rect: '000000'
+      rgb_lock_rect: '000000'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_circle: '770076'
+      rgb_oogie_mode_4: '000000'
+      rgb_rramp_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_bathtub_rect: '000000'
+      rgb_doctor_circle: '000000'
+      rgb_lramp_circle: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_oogie_mode_3: '000000'
+      rgb_soup_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_mode_2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_mode_1: '000000'
+      rgb_soup_circle: '000000'
+    

@@ -1,0 +1,118 @@
+# show_version=5
+- time: 0
+  lights:
+      rgb_mayor_arrow: '000000'
+      rgb_mayor_circle: 'FF6900'
+      rgb_santa_a: 'FF6900'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: '100700'
+      grb_gi_17: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: 'FF6900'
+      rgb_mayor_c_circle: 'FF6900'
+    
+- time: '+1'
+  lights:
+      grb_gi_18: '000000'
+      rgb_zero_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: 'FF6900'
+      rgb_bathtub_rect: 'FF6900'
+      rgb_sally_circle: '4E2000'
+    
+- time: '+1'
+  lights:
+      rgb_sally_circle: 'FF6900'
+    
+- time: '+1'
+  lights:
+      grb_gi_14: '000000'
+      rgb_santa_s: '000000'
+      rgb_soup_circle: 'FE6900'
+    
+- time: '+1'
+  lights:
+      grb_gi_13: '000000'
+      rgb_christmastime_rect: 'FF6900'
+      rgb_santa_a: '000000'
+      rgb_soup_circle: 'FF6900'
+    
+- time: '+1'
+  lights:
+      rgb_charwiz_rect: 'FF6900'
+      rgb_soup_arrow: 'FF6900'
+      rgb_soup_circle: '261000'
+    
+- time: '+1'
+  lights:
+      rgb_doctor_circle: 'FF6900'
+      rgb_holiday_thanksgiving: '030100'
+      rgb_mayor_circle: '090400'
+      rgb_soup_arrow: 'EA6000'
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_holiday_thanksgiving: '000000'
+      rgb_mayor_circle: '000000'
+      rgb_sally_circle: '000000'
+      rgb_soup_arrow: 'A64400'
+    
+- time: '+1'
+  lights:
+      rgb_doctor_rect: 'FF6900'
+      rgb_mayor_c_circle: '000000'
+      rgb_soup_arrow: 'C65100'
+      rgb_soup_circle: '0A0400'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: 'CC5400'
+      rgb_soup_arrow: 'FF6900'
+      rgb_soup_circle: 'FF6900'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: 'D25700'
+      rgb_christmastime_rect: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: 'FF6900'
+      rgb_bathtub_rect: '000000'
+      rgb_jack_circle: 'F76600'
+      rgb_oogie_moon3: 'FF6900'
+    
+- time: '+1'
+  lights:
+      rgb_charwiz_rect: '000000'
+      rgb_jack_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_oogie_moon2: '090400'
+      rgb_oogie_moon3: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_doctor_circle: '000000'
+      rgb_oogie_moon2: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  lights:
+      rgb_doctor_rect: 'F86600'
+    

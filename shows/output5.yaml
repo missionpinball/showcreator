@@ -1,0 +1,270 @@
+# show_version=4
+- time: 0
+  leds:
+      rgb_keepshooting: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_10: '540054'
+      grb_gi_15: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_16: '540054'
+      grb_gi_17: '540054'
+      grb_gi_8: '540054'
+      grb_gi_9: '540054'
+      rgb_holiday_easter: '540054'
+      rgb_holiday_halloween: '540054'
+      rgb_holiday_independence: '540054'
+      rgb_holiday_stpat: '540054'
+      rgb_keepshooting: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_10: '000000'
+      grb_gi_11: '540054'
+      grb_gi_14: '540054'
+      grb_gi_15: '000000'
+      grb_gi_16: '000000'
+      grb_gi_18: '540054'
+      grb_gi_9: '000000'
+      rgb_holiday_door: '540054'
+      rgb_holiday_easter: '000000'
+      rgb_holiday_independence: '000000'
+      rgb_holiday_thanksgiving: '540054'
+      rgb_holiday_valentine: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_12: '540054'
+      grb_gi_13: '540054'
+      grb_gi_14: '000000'
+      grb_gi_17: '000000'
+      grb_gi_8: '000000'
+      rgb_holiday_christmas: '540054'
+      rgb_holiday_door: '000000'
+      rgb_holiday_halloween: '000000'
+      rgb_holiday_stpat: '000000'
+      rgb_zero_circle: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_11: '000000'
+      grb_gi_18: '000000'
+      rgb_christmastime_rect: '540054'
+      rgb_holiday_christmas: '000000'
+      rgb_holiday_thanksgiving: '000000'
+      rgb_holiday_valentine: '000000'
+      rgb_jack_circle: '540054'
+      rgb_sally_circle: '540054'
+      rgb_santa_a: '540054'
+      rgb_santa_b: '540054'
+      rgb_santa_n: '540054'
+      rgb_santa_s: '540054'
+      rgb_santa_t: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_12: '000000'
+      grb_gi_13: '000000'
+      grb_gi_7: '540054'
+      rgb_charwiz_rect: '540054'
+      rgb_jack_circle: '000000'
+      rgb_mayor_c_circle: '540054'
+      rgb_sally_circle: '000000'
+      rgb_zero_circle: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_19: '540054'
+      rgb_bathtub_rect: '540054'
+      rgb_christmastime_rect: '000000'
+      rgb_doctor_circle: '540054'
+      rgb_doctor_rect: '540054'
+      rgb_mayor_arrow: '540054'
+      rgb_mayor_circle: '540054'
+      rgb_santa_a: '000000'
+      rgb_santa_b: '000000'
+      rgb_santa_n: '000000'
+      rgb_santa_s: '000000'
+      rgb_santa_t: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_19: '000000'
+      grb_gi_7: '000000'
+      rgb_charwiz_rect: '000000'
+      rgb_lramp_circle: '540054'
+      rgb_mayor_c_circle: '000000'
+      rgb_mayor_circle: '000000'
+      rgb_soup_circle: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_6: '540054'
+      rgb_bathtub_rect: '000000'
+      rgb_doctor_circle: '000000'
+      rgb_doctor_rect: '000000'
+      rgb_lramp_arrow: '540054'
+      rgb_lramp_ldiamond: '540054'
+      rgb_mayor_arrow: '000000'
+      rgb_oogie_moon: '540054'
+      rgb_oogie_moon2: '540054'
+      rgb_oogie_moon3: '540054'
+      rgb_soup_arrow: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_20: '540054'
+      grb_gi_5: '540054'
+      rgb_lorbit_circle: '540054'
+      rgb_lramp_circle: '000000'
+      rgb_lramp_ldiamond: '000000'
+      rgb_lramp_rdiamond: '540054'
+      rgb_oogie_mode_1: '540054'
+      rgb_oogie_moon3: '000000'
+      rgb_soup_arrow: '000000'
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_20: '000000'
+      grb_gi_6: '000000'
+      rgb_lock_rect: '540054'
+      rgb_lorbit_arrow: '540054'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_rdiamond: '000000'
+      rgb_oogie_mode_2: '540054'
+      rgb_oogie_mode_3: '540054'
+      rgb_oogie_moon: '000000'
+      rgb_oogie_moon2: '000000'
+      rgb_rramp_circle: '540054'
+      rgb_rramp_rdiamond: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_21: '540054'
+      grb_gi_4: '540054'
+      grb_gi_5: '000000'
+      rgb_lorbit_circle: '000000'
+      rgb_oogie_mode_1: '000000'
+      rgb_oogie_mode_2: '000000'
+      rgb_oogie_mode_4: '540054'
+      rgb_oogie_mode_5: '540054'
+      rgb_rorbit_circle: '540054'
+      rgb_rramp_arrow: '540054'
+      rgb_rramp_ldiamond: '540054'
+      rgb_shock_rect: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_22: '540054'
+      rgb_barrel_rect: '540054'
+      rgb_grave_circle: '540054'
+      rgb_lock_rect: '000000'
+      rgb_lorbit_arrow: '000000'
+      rgb_oogie_mode_3: '000000'
+      rgb_oogie_mode_6: '540054'
+      rgb_rorbit_arrow: '540054'
+      rgb_rramp_circle: '000000'
+      rgb_rramp_rdiamond: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_21: '000000'
+      grb_gi_4: '000000'
+      rgb_barrel_rect: '000000'
+      rgb_bug_1: '540054'
+      rgb_bug_2: '540054'
+      rgb_bug_3: '540054'
+      rgb_grave_arrow: '540054'
+      rgb_leftloop_circle: '540054'
+      rgb_mystery_rect: '540054'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_mode_5: '000000'
+      rgb_rorbit_circle: '000000'
+      rgb_rramp_arrow: '000000'
+      rgb_rramp_ldiamond: '000000'
+      rgb_shock_rect: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_2: '540054'
+      grb_gi_22: '000000'
+      grb_gi_24: '540054'
+      rgb_grave_circle: '000000'
+      rgb_leftloop_arrow: '540054'
+      rgb_oogie_ccw_circle: '540054'
+      rgb_oogie_cw_circle: '540054'
+      rgb_oogie_mode_6: '000000'
+      rgb_rorbit_arrow: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_3: '540054'
+      rgb_bug_1: '000000'
+      rgb_bug_2: '000000'
+      rgb_bug_3: '000000'
+      rgb_grave_arrow: '000000'
+      rgb_jack_saucer: '540054'
+      rgb_leftloop_arrow: '000000'
+      rgb_leftloop_circle: '000000'
+      rgb_mystery_rect: '000000'
+      rgb_oogie_ccw_arrow: '540054'
+      rgb_oogie_cw_arrow: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_2: '000000'
+      grb_gi_24: '000000'
+      grb_gi_3: '000000'
+      rgb_oogie_ccw_circle: '000000'
+      rgb_oogie_cw_circle: '000000'
+    
+- time: '+1'
+  leds:
+      grb_gi_1: '540054'
+      rgb_jack_saucer: '000000'
+      rgb_oogie_ccw_arrow: '000000'
+      rgb_oogie_cw_arrow: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_pops_flasher3: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_1: '000000'
+      grb_gi_23: '540054'
+      rgb_pops_flasher: '540054'
+      rgb_pops_flasher2: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_23: '000000'
+      rgb_pops_flasher: '000000'
+      rgb_pops_flasher2: '000000'
+      rgb_pops_flasher3: '000000'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_25: '540054'
+      rgb_backtree_1: '540054'
+      rgb_backtree_2: '540054'
+      rgb_backtree_3: '540054'
+      rgb_backtree_4: '540054'
+      rgb_backtree_5: '540054'
+      rgb_backtree_6: '540054'
+      rgb_backtree_7: '540054'
+    
+- time: '+1'
+  leds:
+      grb_gi_25: '000000'
+      rgb_backtree_1: '000000'
+      rgb_backtree_7: '000000'
+    

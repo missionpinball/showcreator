@@ -17,6 +17,12 @@ Pinlandia - LED.BMX
 	- widebody/standard toggle (currently wide only)
 
 ****************  History  *************************
+- V1.7 - 2018/01/17
+	- for mpf version 0.50  change: config version 5, leds->lights 
+
+- V1.6 - 2017/08/04
+	- fade_out devel experiments
+
 - V1.57 - 2017/07/20
 	- make show version a variable
 
@@ -59,7 +65,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.57 - 2017-07-20"
+AppTitle$ = "Pinlandia - V1.7 - 2018-01-27"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -77,8 +83,10 @@ Const cDURATION = 1023
 Const cSTARTX = 50+150
 Const cSTARTY = 50+300
 
+Const infodisplayx = 420
 
-Global SHOW_VERSION$ = "# show_version=4"
+
+Global SHOW_VERSION$ = "# show_version=5"
 
 Global pixColor:appColor = New appColor
 Global num_leds = 0
@@ -116,6 +124,7 @@ Global animate_current:Int = 0
 Global flash:Int = 0
 Global ledsonly:Int = 0
 Global slowmo:Int = 0
+Global blendit:Int = 1
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
@@ -124,7 +133,7 @@ Local col_start_x = 650
 Local col_start_y = 490
 Local col_end_x = col_start_x + 80
 
-
+Global fade_out = False
 
 
 '-- main loop  ---------------------------------------------------------------------------------------------------
@@ -405,6 +414,10 @@ Repeat
 	SetColor 200,200,200
 	DrawRect 401,0,1,800
 
+	'highlight the menu
+	SetColor 60,60,60
+	DrawRect 650-10,10-2,148,800
+
 	If mouseover(650,10)
 		ShowContext("Toggle animation segment ON/OFF")
 		SetColor 250,250,250 
@@ -438,7 +451,7 @@ Repeat
 	DrawText "[-]  DELAY  [+]", 650, 50
 
 	If mouseover(650,70)
-		ShowContext("Adjust ength of animation section (not including delay)")
+		ShowContext("Adjust length of animation section (not including delay)")
 		SetColor 250,250,250 
 	Else 
 		SetColor 180,180,180
@@ -567,84 +580,84 @@ Repeat
 
 	SetColor 180,180,180
 	Local blockstarty = 10
-	DrawText "CURRENT", 480,blockstarty
-	DrawText "cur x  "+cur_an.x,440,blockstarty+20
-	DrawText "cur y  "+cur_an.y,440,blockstarty+30
-	DrawText "cur r  "+cur_an.cl_r,440,blockstarty+40
-	DrawText "cur g  "+cur_an.cl_g,440,blockstarty+50
-	DrawText "cur b  "+cur_an.cl_b,440,blockstarty+60
-	DrawText "cur rt "+cur_an.rot,440,blockstarty+70
-	DrawText "cur sx "+cur_an.sc_x,440,blockstarty+80
-	DrawText "cur sy "+cur_an.sc_y,440,blockstarty+90
+	DrawText "CURRENT", infodisplayx+40 ,blockstarty
+	DrawText "cur x  "+cur_an.x,infodisplayx ,blockstarty+20
+	DrawText "cur y  "+cur_an.y,infodisplayx ,blockstarty+30
+	DrawText "cur r  "+cur_an.cl_r,infodisplayx ,blockstarty+40
+	DrawText "cur g  "+cur_an.cl_g,infodisplayx ,blockstarty+50
+	DrawText "cur b  "+cur_an.cl_b,infodisplayx ,blockstarty+60
+	DrawText "cur rt "+cur_an.rot,infodisplayx ,blockstarty+70
+	DrawText "cur sx "+cur_an.sc_x,infodisplayx ,blockstarty+80
+	DrawText "cur sy "+cur_an.sc_y,infodisplayx ,blockstarty+90
 
 	blockstarty = 120
-	DrawText "START", 480,blockstarty
-	DrawText "x  "+cur_an.start_x,440,blockstarty+20
-	DrawText "y  "+cur_an.start_y,440,blockstarty+30
-	DrawText "r  "+cur_an.start_cl_r,440,blockstarty+40
-	DrawText "g  "+cur_an.start_cl_g,440,blockstarty+50
-	DrawText "b  "+cur_an.start_cl_b,440,blockstarty+60
-	DrawText "rt "+cur_an.start_rot,440,blockstarty+70
-	DrawText "sx "+cur_an.start_sc_x,440,blockstarty+80
-	DrawText "sy "+cur_an.start_sc_y,440,blockstarty+90
+	DrawText "START", infodisplayx+40,blockstarty
+	DrawText "x  "+cur_an.start_x,infodisplayx ,blockstarty+20
+	DrawText "y  "+cur_an.start_y,infodisplayx ,blockstarty+30
+	DrawText "r  "+cur_an.start_cl_r,infodisplayx ,blockstarty+40
+	DrawText "g  "+cur_an.start_cl_g,infodisplayx ,blockstarty+50
+	DrawText "b  "+cur_an.start_cl_b,infodisplayx ,blockstarty+60
+	DrawText "rt "+cur_an.start_rot,infodisplayx ,blockstarty+70
+	DrawText "sx "+cur_an.start_sc_x,infodisplayx ,blockstarty+80
+	DrawText "sy "+cur_an.start_sc_y,infodisplayx ,blockstarty+90
 
 	blockstarty = 230
-	DrawText "FINISH", 480,blockstarty
-	DrawText "x  "+cur_an.end_x,440,blockstarty+20
-	DrawText "y  "+cur_an.end_y,440,blockstarty+30
-	DrawText "r  "+cur_an.end_cl_r,440,blockstarty+40
-	DrawText "g  "+cur_an.end_cl_g,440,blockstarty+50
-	DrawText "b  "+cur_an.end_cl_b,440,blockstarty+60
-	DrawText "rt "+cur_an.end_rot,440,blockstarty+70
-	DrawText "sx "+cur_an.end_sc_x,440,blockstarty+80
-	DrawText "sy "+cur_an.end_sc_y,440,blockstarty+90
+	DrawText "FINISH", infodisplayx+40,blockstarty
+	DrawText "x  "+cur_an.end_x,infodisplayx ,blockstarty+20
+	DrawText "y  "+cur_an.end_y,infodisplayx ,blockstarty+30
+	DrawText "r  "+cur_an.end_cl_r,infodisplayx ,blockstarty+40
+	DrawText "g  "+cur_an.end_cl_g,infodisplayx ,blockstarty+50
+	DrawText "b  "+cur_an.end_cl_b,infodisplayx ,blockstarty+60
+	DrawText "rt "+cur_an.end_rot,infodisplayx ,blockstarty+70
+	DrawText "sx "+cur_an.end_sc_x,infodisplayx ,blockstarty+80
+	DrawText "sy "+cur_an.end_sc_y,infodisplayx ,blockstarty+90
 
 	blockstarty = 360
-	DrawText "Animation Segment: "+anim_index,440,blockstarty
-	DrawText "Shape  "+cur_an.image_number,440,blockstarty+20
-	DrawText image_filename[cur_an.image_number],450,blockstarty+30
-	DrawText "Delay ms:          "+cur_an.delaysteps*MS_PER_FRAME,440,blockstarty+50
+	DrawText "Animation Segment: "+anim_index,infodisplayx ,blockstarty
+	DrawText "Shape  "+cur_an.image_number,infodisplayx ,blockstarty+20
+	DrawText image_filename[cur_an.image_number],infodisplayx+10,blockstarty+30
+	DrawText "Delay ms:          "+cur_an.delaysteps*MS_PER_FRAME,infodisplayx ,blockstarty+50
 	If cur_an.startOn = 1
-		DrawText "Visible at Start:  YES",440,blockstarty+60
+		DrawText "Visible at Start:  YES",infodisplayx ,blockstarty+60
 	Else
-		DrawText "Visible at Start:  NO",440,blockstarty+60
+		DrawText "Visible at Start:  NO",infodisplayx ,blockstarty+60
 	EndIf
 	If cur_an.EndOn = 1
-		DrawText "Visible at End:    YES",440,blockstarty+70
+		DrawText "Visible at End:    YES",infodisplayx ,blockstarty+70
 	Else
-		DrawText "Visible at End:    NO",440,blockstarty+70
+		DrawText "Visible at End:    NO",infodisplayx ,blockstarty+70
 	EndIf
-	DrawText "Anim Duration ms:  "+cur_an.duration,440,blockstarty+80
-	DrawText "Anim Steps:        "+Int(cur_an.duration/MS_PER_FRAME),440,blockstarty+90
-	DrawText "Total Steps:       "+(Int(cur_an.duration/MS_PER_FRAME)+cur_an.delaysteps),440,blockstarty+100
+	DrawText "Anim Duration ms:  "+cur_an.duration,infodisplayx ,blockstarty+80
+	DrawText "Anim Steps:        "+Int(cur_an.duration/MS_PER_FRAME),infodisplayx ,blockstarty+90
+	DrawText "Total Steps:       "+(Int(cur_an.duration/MS_PER_FRAME)+cur_an.delaysteps),infodisplayx ,blockstarty+100
 
 
 	If ledsonly = 1
-		DrawText "SHOWING LEDs (SHAPES HIDDEN)",440,blockstarty+120
+		DrawText "SHOWING LEDs (SHAPES HIDDEN)",infodisplayx ,blockstarty+120
 	Else
-		DrawText "SHOWING SHAPES",440,blockstarty+120
+		DrawText "SHOWING SHAPES",infodisplayx ,blockstarty+120
 	EndIf
 	
 	blockstarty = 520
-	DrawText "    KEYS",440,blockstarty
+	DrawText "    KEYS",infodisplayx ,blockstarty
 	
-	DrawText "T - Change Image",440,blockstarty+20
-	DrawText "A - Adjust Rotation ",440,blockstarty+30
-	DrawText "S - Adjust Scale X",440,blockstarty+40
-	DrawText "X - Adjust Scale Y",440,blockstarty+50
-	DrawText "C - Adjust Scale XY",440,blockstarty+60
-	DrawText "  +SHIFT for Negative",440,blockstarty+70
-	DrawText "  +CTRL  for  x10",440,blockstarty+80
+	DrawText "T - Change Image",infodisplayx ,blockstarty+20
+	DrawText "A - Adjust Rotation ",infodisplayx ,blockstarty+30
+	DrawText "S - Adjust Scale X",infodisplayx ,blockstarty+40
+	DrawText "X - Adjust Scale Y",infodisplayx ,blockstarty+50
+	DrawText "C - Adjust Scale XY",infodisplayx ,blockstarty+60
+	DrawText "  +SHIFT for Negative",infodisplayx ,blockstarty+70
+	DrawText "  +CTRL  for  x10",infodisplayx ,blockstarty+80
 
-	DrawText "I - FLASH START/FINISH",440,blockstarty+100
-	DrawText "U - PLAY SEGMENT",440,blockstarty+110
-	DrawText "L - TOGGLE SHAPES/LEDS",440,blockstarty+120
-	DrawText "SPC - TOGGLE START/FINISH",440,blockstarty+130
+	DrawText "I - FLASH START/FINISH",infodisplayx ,blockstarty+100
+	DrawText "U - PLAY SEGMENT",infodisplayx ,blockstarty+110
+	DrawText "L - TOGGLE SHAPES/LEDS",infodisplayx ,blockstarty+120
+	DrawText "SPC - TOGGLE START/FINISH",infodisplayx ,blockstarty+130
 	
 	
-	DrawText "P - PLAY SET",440,blockstarty+150
-	DrawText "P+SHIFT - SAVE SCRIPT",440,blockstarty+160
-	DrawText "ESC - QUIT",440,blockstarty+170
+	DrawText "P - PLAY SET",infodisplayx ,blockstarty+150
+	DrawText "P+SHIFT - SAVE SCRIPT",infodisplayx ,blockstarty+160
+	DrawText "ESC - QUIT",infodisplayx ,blockstarty+170
 
 	'colour graphs
 	DrawText " START", col_start_x, col_start_y
@@ -1492,8 +1505,11 @@ End Function
 
 
 Function draw_Shapes()
-
-	SetBlend lightblend
+	If blendit
+		SetBlend lightblend
+	Else
+		SetBlend maskblend
+	EndIf
 	Local t:Int
 	For t = 0 To cMAXANIMS-1
 		If anim_array[t].active = 1
@@ -1550,7 +1566,7 @@ Function GetPixel:appColor(x:Int, y:Int)
   Local temp:TPixmap =LockImage(tmp)
   Local argb:Int =Temp.ReadPixel(0, 0)
   UnlockImage(tmp)
-  result.alpha =(argb Shr 24) & $ff
+  'result.alpha =(argb Shr 24) & $ff
   result.red   =(argb Shr 16) & $ff
   result.green =(argb Shr 8) & $ff
   result.blue  =argb & $ff
@@ -1618,10 +1634,10 @@ End Function
 
 Type appColor
 
-	Field red:Int
-	Field green:Int
-	Field blue:Int 
-	Field alpha:Int
+	Field red:Float
+	Field green:Float
+	Field blue:Float 
+'	Field alpha:Float
 	
 End Type
    
@@ -1692,9 +1708,31 @@ Type led
 		prev_g = g
 		prev_b = b				
 		pixColor = GetPixel(x, y)
-		r = pixColor.red
-		g = pixColor.green
-		b = pixColor.blue
+		If g_write_to_file = 1
+			r = pixColor.red
+			g = pixColor.green
+			b = pixColor.blue
+		Else	
+			If fade_out	
+				If pixColor.red > 0 Or pixColor.green > 0 Or pixColor.blue > 0
+					r = pixColor.red
+					g = pixColor.green
+					b = pixColor.blue
+				Else
+					r = r*.90
+					If r < 1 Then r = 0
+					g = g*.90
+					If g < 1 Then g = 0			
+					b = b*.90
+					If b < 1 Then b = 0			
+				EndIf
+			Else
+				r = pixColor.red
+				g = pixColor.green
+				b = pixColor.blue
+			EndIf
+		EndIf
+		
 	End Method
 		
 	Function dumpState(diff=0)	
@@ -1707,15 +1745,21 @@ Type led
 				If diff = 0
 					cnt=cnt+1
 				Else
-					If (p.prev_r <> p.r Or p.prev_g <> p.g Or p.prev_b <> p.b)					
-						cnt=cnt+1
+					If (p.prev_r <> p.r Or p.prev_g <> p.g Or p.prev_b <> p.b)	
+						If fade_out
+							If p.r > 0 Or p.g > 0 Or p.b > 0	
+								cnt=cnt+1
+							EndIf
+						Else				
+							cnt=cnt+1
+						EndIf
 					EndIf
 				EndIf
 			EndIf
 		Next	
 		If cnt > 0
 			If first_step = 0 Then write_a_line("- time: '+1'")
-		  	write_a_line("  leds:")
+		  	write_a_line("  lights:")
 			For t = 0 To num_leds-1
 				p:led = ledarray[t]
 				If p.active > 0
@@ -1726,10 +1770,21 @@ Type led
 						write_a_line("    "+p.name+": '"+ r+g+b+"'")
 					Else
 						If (p.prev_r <> p.r Or p.prev_g <> p.g Or p.prev_b <> p.b)					
-							r$ = Mid(Hex(p.r), 7, 2)
-							g$ = Mid(Hex(p.g), 7, 2)
-							b$ = Mid(Hex(p.b), 7, 2)
-							write_a_line("    "+p.name+": '"+ r+g+b+"'")
+							If fade_out
+								If p.r > 0 Or p.g > 0 Or p.b > 0	
+									r$ = Mid(Hex(p.r), 7, 2)
+									g$ = Mid(Hex(p.g), 7, 2)
+									b$ = Mid(Hex(p.b), 7, 2)
+									write_a_line("    "+p.name+":")
+									write_a_line("        color: '"+ r+g+b +"'")
+									write_a_line("        fade: 100ms")
+								EndIf
+							Else				
+								r$ = Mid(Hex(p.r), 7, 2)
+								g$ = Mid(Hex(p.g), 7, 2)
+								b$ = Mid(Hex(p.b), 7, 2)
+								write_a_line("    "+p.name+": '"+ r+g+b+"'")
+							EndIf
 						EndIf
 					EndIf
 				EndIf
@@ -1737,7 +1792,7 @@ Type led
 			write_a_line("    ")
 		Else
 			write_a_line("#No change this frame - take another step")
-		  	write_a_line("#  leds:")
+		  	write_a_line("#  lights:")
 			write_a_line("- time: '+1'")
 			write_a_line("    ")
 		EndIf

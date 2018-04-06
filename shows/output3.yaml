@@ -1,0 +1,253 @@
+# show_version=4
+- time: 0
+  leds:
+      rgb_oogie_ccw_arrow:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      grb_gi_2:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_jack_saucer:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_ccw_circle:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_grave_arrow:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_mystery_rect:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_bug_3:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_bug_2:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_grave_circle:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_mode_6:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_bug_1:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_mode_5:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_rramp_ldiamond:
+        color: 'BF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_oogie_mode_4:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_rramp_ldiamond:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_barrel_rect:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_mode_2:
+        color: '7F0000'
+        fade: 100ms
+      rgb_oogie_mode_3:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_shock_rect:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_lock_rect:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_mode_1:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_mode_2:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_rramp_circle:
+        color: '7F0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_lramp_rdiamond:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_moon:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_moon2:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_lramp_arrow:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_lramp_circle:
+        color: '3F0000'
+        fade: 100ms
+      rgb_oogie_moon3:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_lramp_circle:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_oogie_mode_4:
+        color: '7F0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_lramp_ldiamond:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_mayor_c_circle:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_charwiz_rect:
+        color: '3F0000'
+        fade: 100ms
+      rgb_christmastime_rect:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_lramp_rdiamond:
+        color: 'BF0000'
+        fade: 100ms
+      rgb_mayor_circle:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_charwiz_rect:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_sally_circle:
+        color: 'FF0000'
+        fade: 100ms
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_13:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_holiday_christmas:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_holiday_thanksgiving:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_santa_a:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      grb_gi_14:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_holiday_halloween:
+        color: 'FF0000'
+        fade: 100ms
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_15:
+        color: 'FF0000'
+        fade: 100ms
+      grb_gi_16:
+        color: 'FF0000'
+        fade: 100ms
+      rgb_holiday_christmas:
+        color: '7F0000'
+        fade: 100ms
+      rgb_holiday_door:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      rgb_holiday_independence:
+        color: 'FF0000'
+        fade: 100ms
+    
+- time: '+1'
+  leds:
+      grb_gi_17:
+        color: 'FF0000'
+        fade: 100ms
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_15:
+        color: 'BF0000'
+        fade: 100ms
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    

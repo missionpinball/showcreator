@@ -1,0 +1,147 @@
+# show_version=4
+- time: 0
+  leds:
+      grb_gi_10: '00FA00'
+      rgb_lramp_arrow: '000000'
+      rgb_lramp_circle: '000000'
+      rgb_lramp_ldiamond: '000000'
+      rgb_lramp_rdiamond: '000000'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      grb_gi_9: '00FA00'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_stpat: '00FA00'
+    
+- time: '+1'
+  leds:
+      grb_gi_11: '00D700'
+      grb_gi_9: '000000'
+      rgb_holiday_valentine: '008F00'
+    
+- time: '+1'
+  leds:
+      grb_gi_11: '00FA00'
+      rgb_holiday_easter: '00FA00'
+      rgb_holiday_valentine: '00FA00'
+    
+- time: '+1'
+  leds:
+      grb_gi_10: '00FB00'
+      grb_gi_11: '00FB00'
+      rgb_holiday_easter: '000000'
+      rgb_holiday_stpat: '00FB00'
+      rgb_holiday_valentine: '00FB00'
+    
+- time: '+1'
+  leds:
+      grb_gi_11: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_christmas: '004400'
+      rgb_holiday_door: '00FB00'
+    
+- time: '+1'
+  leds:
+      rgb_christmastime_rect: '000700'
+      rgb_holiday_christmas: '00FB00'
+      rgb_holiday_door: '000000'
+      rgb_jack_circle: '00FB00'
+    
+- time: '+1'
+  leds:
+      grb_gi_10: '000000'
+      rgb_christmastime_rect: '00FB00'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      rgb_jack_circle: '00F200'
+    
+- time: '+1'
+  leds:
+      rgb_jack_circle: '007500'
+    
+- time: '+1'
+  leds:
+      rgb_charwiz_rect: '00FB00'
+      rgb_holiday_stpat: '000000'
+      rgb_jack_circle: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: '00FB00'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: '00FC00'
+      rgb_charwiz_rect: '000000'
+      rgb_christmastime_rect: '00FC00'
+      rgb_holiday_christmas: '00FC00'
+      rgb_holiday_valentine: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_mayor_c_circle: '00FC00'
+    
+- time: '+1'
+  leds:
+      rgb_holiday_christmas: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_lramp_circle: '00E500'
+      rgb_mayor_c_circle: '000000'
+    
+- time: '+1'
+  leds:
+      rgb_lramp_circle: '00FC00'
+    
+- time: '+1'
+  leds:
+      rgb_christmastime_rect: '000000'
+      rgb_lramp_arrow: '001C00'
+    
+- time: '+1'
+  leds:
+      rgb_lramp_arrow: '00FC00'
+    
+#No change this frame - take another step
+#  leds:
+- time: '+1'
+    
+- time: '+1'
+  leds:
+      rgb_bathtub_rect: '000000'
+      rgb_lramp_ldiamond: '00F900'
+      rgb_lramp_rdiamond: '00FA00'
+    
+- time: '+1'
+  leds:
+      rgb_lramp_arrow: '00FD00'
+      rgb_lramp_circle: '00FD00'
+      rgb_lramp_ldiamond: '00FD00'
+      rgb_lramp_rdiamond: '00FD00'
+    

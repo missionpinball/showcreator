@@ -1,0 +1,216 @@
+# show_version=5
+- time: 0
+  lights:
+      grb_gi_6: 'FC9500'
+    
+- time: '+1'
+  lights:
+      grb_gi_6: 'FA9400'
+      rgb_soup_arrow: 'FA9400'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: 'F89200'
+      grb_gi_6: 'F89200'
+      rgb_soup_arrow: 'F89200'
+      rgb_soup_circle: 'F89200'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: 'F59100'
+      grb_gi_6: 'F59100'
+      rgb_rramp_circle: 'F59100'
+      rgb_soup_arrow: 'F59100'
+      rgb_soup_circle: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: 'F39000'
+      grb_gi_6: 'F39000'
+      rgb_oogie_moon2: 'F39000'
+      rgb_rramp_circle: 'F39000'
+      rgb_rramp_rdiamond: 'F39000'
+      rgb_soup_arrow: 'F39000'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: 'F18E00'
+      grb_gi_6: 'F18E00'
+      rgb_oogie_mode_1: 'F18E00'
+      rgb_oogie_mode_2: 'F18E00'
+      rgb_oogie_moon2: '000000'
+      rgb_rramp_arrow: 'F18E00'
+      rgb_rramp_circle: 'F18E00'
+      rgb_rramp_rdiamond: 'F18E00'
+      rgb_soup_arrow: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: 'EE8D00'
+      grb_gi_6: '000000'
+      rgb_oogie_mode_1: 'EE8D00'
+      rgb_oogie_mode_2: 'EE8D00'
+      rgb_oogie_mode_3: 'EE8D00'
+      rgb_oogie_mode_4: 'EE8D00'
+      rgb_rramp_arrow: 'EE8D00'
+      rgb_rramp_circle: 'EE8D00'
+      rgb_rramp_rdiamond: 'EE8D00'
+    
+- time: '+1'
+  lights:
+      grb_gi_5: '000000'
+      rgb_oogie_mode_1: 'EC8C00'
+      rgb_oogie_mode_2: 'EC8C00'
+      rgb_oogie_mode_3: 'EC8C00'
+      rgb_oogie_mode_4: 'EC8C00'
+      rgb_oogie_mode_5: 'EC8C00'
+      rgb_oogie_mode_6: 'EC8C00'
+      rgb_rramp_arrow: 'EC8C00'
+      rgb_rramp_circle: 'EC8C00'
+      rgb_rramp_ldiamond: 'EC8C00'
+      rgb_rramp_rdiamond: 'EC8C00'
+    
+- time: '+1'
+  lights:
+      rgb_lock_rect: 'EA8A00'
+      rgb_oogie_mode_1: '000000'
+      rgb_oogie_mode_2: 'EA8A00'
+      rgb_oogie_mode_3: 'EA8A00'
+      rgb_oogie_mode_4: 'EA8A00'
+      rgb_oogie_mode_5: 'EA8A00'
+      rgb_oogie_mode_6: 'EA8A00'
+      rgb_rramp_arrow: 'EA8A00'
+      rgb_rramp_circle: 'EA8A00'
+      rgb_rramp_ldiamond: 'EA8A00'
+      rgb_rramp_rdiamond: 'EA8A00'
+    
+- time: '+1'
+  lights:
+      rgb_barrel_rect: 'E78900'
+      rgb_bug_1: 'E78900'
+      rgb_lock_rect: 'E78900'
+      rgb_oogie_mode_2: 'E78900'
+      rgb_oogie_mode_3: 'E78900'
+      rgb_oogie_mode_4: 'E78900'
+      rgb_oogie_mode_5: 'E78900'
+      rgb_oogie_mode_6: 'E78900'
+      rgb_rramp_arrow: 'E78900'
+      rgb_rramp_circle: 'E78900'
+      rgb_rramp_ldiamond: 'E78900'
+      rgb_rramp_rdiamond: '000000'
+      rgb_shock_rect: 'E78900'
+    
+- time: '+1'
+  lights:
+      rgb_barrel_rect: 'E58800'
+      rgb_bug_1: 'E58800'
+      rgb_leftloop_circle: 'E58800'
+      rgb_lock_rect: '000000'
+      rgb_oogie_mode_2: 'E58800'
+      rgb_oogie_mode_3: 'E58800'
+      rgb_oogie_mode_4: 'E58800'
+      rgb_oogie_mode_5: 'E58800'
+      rgb_oogie_mode_6: 'E58800'
+      rgb_rramp_arrow: '000000'
+      rgb_rramp_circle: '000000'
+      rgb_rramp_ldiamond: 'E58800'
+      rgb_shock_rect: 'E58800'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'E38600'
+      rgb_barrel_rect: 'E38600'
+      rgb_bug_1: 'E38600'
+      rgb_leftloop_circle: 'E38600'
+      rgb_oogie_mode_2: '000000'
+      rgb_oogie_mode_3: 'E38600'
+      rgb_oogie_mode_4: 'E38600'
+      rgb_oogie_mode_5: 'E38600'
+      rgb_oogie_mode_6: 'E38600'
+      rgb_rramp_ldiamond: '000000'
+      rgb_shock_rect: 'E38600'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'E18500'
+      rgb_barrel_rect: 'E18500'
+      rgb_bug_1: 'E18500'
+      rgb_bug_2: 'E18500'
+      rgb_leftloop_arrow: 'E18500'
+      rgb_leftloop_circle: 'E18500'
+      rgb_oogie_mode_3: 'E18500'
+      rgb_oogie_mode_4: 'E18500'
+      rgb_oogie_mode_5: 'E18500'
+      rgb_oogie_mode_6: 'E18500'
+      rgb_shock_rect: 'E18500'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'DE8400'
+      rgb_barrel_rect: 'DE8400'
+      rgb_bug_1: 'DE8400'
+      rgb_bug_2: 'DE8400'
+      rgb_leftloop_arrow: 'DE8400'
+      rgb_leftloop_circle: 'DE8400'
+      rgb_oogie_mode_3: '000000'
+      rgb_oogie_mode_4: 'DE8400'
+      rgb_oogie_mode_5: 'DE8400'
+      rgb_oogie_mode_6: 'DE8400'
+      rgb_shock_rect: 'DE8400'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'DC8200'
+      rgb_barrel_rect: 'DC8200'
+      rgb_bug_1: 'DC8200'
+      rgb_bug_2: 'DC8200'
+      rgb_leftloop_arrow: 'DC8200'
+      rgb_leftloop_circle: 'DC8200'
+      rgb_oogie_mode_4: '000000'
+      rgb_oogie_mode_5: '000000'
+      rgb_oogie_mode_6: 'DC8200'
+      rgb_shock_rect: 'DC8200'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'DA8100'
+      grb_gi_24: 'DA8100'
+      rgb_barrel_rect: 'DA8100'
+      rgb_bug_1: 'DA8100'
+      rgb_bug_2: '000000'
+      rgb_leftloop_arrow: 'DA8100'
+      rgb_leftloop_circle: 'DA8100'
+      rgb_oogie_mode_6: '000000'
+      rgb_shock_rect: '000000'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: 'D78000'
+      grb_gi_24: 'D78000'
+      rgb_barrel_rect: '000000'
+      rgb_bug_1: '000000'
+      rgb_leftloop_arrow: 'D78000'
+      rgb_leftloop_circle: 'D78000'
+      rgb_oogie_cw_circle: 'D78000'
+    
+- time: '+1'
+  lights:
+      grb_gi_22: '000000'
+      grb_gi_24: 'D57E00'
+      rgb_leftloop_arrow: 'D57E00'
+      rgb_leftloop_circle: 'D57E00'
+      rgb_oogie_cw_circle: 'D57E00'
+    
+- time: '+1'
+  lights:
+      grb_gi_24: 'D37D00'
+      rgb_leftloop_arrow: 'D37D00'
+      rgb_leftloop_circle: '000000'
+      rgb_oogie_cw_circle: 'D37D00'
+    
+- time: '+1'
+  lights:
+      grb_gi_24: 'D07B00'
+      rgb_leftloop_arrow: '000000'
+      rgb_oogie_cw_circle: '000000'
+    
