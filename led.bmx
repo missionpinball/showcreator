@@ -8,15 +8,22 @@ Pinlandia - LED.BMX
 
 	- What is it?:      MPF LED show script generator
 	- Language:         Blitxmax
-	- Programmed by:    Mark Incitti - 2017
+	- Programmed by:    Mark Incitti - 2017, 2018, 2019
 
 ****************    TODO     ***********************
+
+	- add a B/W toggle - either 000000 or FFFFFF based on threshold
+	- add a repeat/loop button (non-save only)
 	- FPS selector
 	- code refactor - move functions into types
 	- led loading from monitor.yaml 
 	- widebody/standard toggle (currently wide only)
 
 ****************  History  *************************
+- V1.8 - 2019/03/09
+	- add flushmouse and flushkeys to prevent false clicks after file loads
+	- remove space in #show_version=5
+
 - V1.7 - 2018/01/17
 	- for mpf version 0.50  change: config version 5, leds->lights 
 
@@ -65,7 +72,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.7 - 2018-01-27"
+AppTitle$ = "Pinlandia - V1.8 - 2019-03-10"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -86,7 +93,7 @@ Const cSTARTY = 50+300
 Const infodisplayx = 420
 
 
-Global SHOW_VERSION$ = "# show_version=5"
+Global SHOW_VERSION$ = "#show_version=5"
 
 Global pixColor:appColor = New appColor
 Global num_leds = 0
@@ -137,6 +144,9 @@ Global fade_out = False
 
 
 '-- main loop  ---------------------------------------------------------------------------------------------------
+
+FlushKeys()
+FlushMouse()
 
 Repeat
 
@@ -324,22 +334,30 @@ Repeat
 				'LOAD SEGMENT
 				If my > 310 And my < 310+10
 					LoadSegment(anim_index)
+					FlushKeys()
+					FlushMouse()
 				EndIf
 
 				'SAVE SEGMENT
 				If my > 330 And my < 330+10
 					SaveSegment(anim_index)
+					FlushKeys()
+					FlushMouse()
 				EndIf
 
 				'LOAD SET
 				If my > 350 And my < 350+10
 					LoadAllSegments()
 					SetGlobalValues()
+					FlushKeys()
+					FlushMouse()
 				EndIf
 
 				'SAVE SET
 				If my > 370 And my < 370+10
 					SaveAllSegments()
+					FlushKeys()
+					FlushMouse()
 				EndIf
 			EndIf
 		EndIf
@@ -653,11 +671,11 @@ Repeat
 	DrawText "U - PLAY SEGMENT",infodisplayx ,blockstarty+110
 	DrawText "L - TOGGLE SHAPES/LEDS",infodisplayx ,blockstarty+120
 	DrawText "SPC - TOGGLE START/FINISH",infodisplayx ,blockstarty+130
+	DrawText "M - HOLD FOR SLOWMO",infodisplayx ,blockstarty+140
 	
-	
-	DrawText "P - PLAY SET",infodisplayx ,blockstarty+150
-	DrawText "P+SHIFT - SAVE SCRIPT",infodisplayx ,blockstarty+160
-	DrawText "ESC - QUIT",infodisplayx ,blockstarty+170
+	DrawText "P - PLAY SET",infodisplayx ,blockstarty+160
+	DrawText "P+SHIFT - SAVE SCRIPT",infodisplayx ,blockstarty+170
+	DrawText "ESC - QUIT",infodisplayx ,blockstarty+180
 
 	'colour graphs
 	DrawText " START", col_start_x, col_start_y
