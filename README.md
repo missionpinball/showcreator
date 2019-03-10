@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-* Lightshow script generator for MPF
+* Lightshow script generator for MPF 0.50+ 
 
 
 ### How do I get set up? ###
@@ -20,16 +20,20 @@
 * HOLD SHIFT to reverse above functions
 * HOLD CTRL to increase functions by 10X
 
-* I - flash between START and FINISH ends
-* L - toggle between viewing SHAPES or LEDs
-* SPC - toggle between START/FINISH ends
+* I - flash between START and FINISH end points
+* L - toggle between viewing SHAPES or affected LEDs
+* B - toggle between BW and full colour output
+* B+SHIFT - change the B/W Threshold (16-240)/256
+
+* SPC - toggle between START and FINISH end points
 
 * U - play segment
 * P - play complete set
+* M - HOLD for slow motion during segment/set play
 
 * P+SHIFT - play set and create script file
 
-* ESC - quit
+* ESC - quit - Y/N confirm quit
 
 * Left Mouse Button Down over playfield adjusts position 
   of current end (START or FINISH)

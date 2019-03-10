@@ -20,6 +20,10 @@ Pinlandia - LED.BMX
 	- widebody/standard toggle (currently wide only)
 
 ****************  History  *************************
+- V1.9 - 2019/03/10
+	- add an ESC -> Quit confirm y/n
+	- B/W toggle with B, B+SHIFT chnage threshold level (16-240)/256 
+
 - V1.8 - 2019/03/09
 	- add flushmouse and flushkeys to prevent false clicks after file loads
 	- remove space in #show_version=5
@@ -72,7 +76,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.8 - 2019-03-10"
+AppTitle$ = "Pinlandia - V1.9 - 2019-03-10"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -132,6 +136,9 @@ Global flash:Int = 0
 Global ledsonly:Int = 0
 Global slowmo:Int = 0
 Global blendit:Int = 1
+Global black_white:Int = 0 
+Global bw_threshold:Int = 32 
+
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
@@ -141,6 +148,7 @@ Local col_start_y = 490
 Local col_end_x = col_start_x + 80
 
 Global fade_out = False
+Global gamedone:Int = 0
 
 
 '-- main loop  ---------------------------------------------------------------------------------------------------
@@ -211,6 +219,15 @@ Repeat
 		EndIf
 		cur_an.set_scale_x(g_sc_x,se)
 		cur_an.set_scale_y(g_sc_y,se)
+	EndIf
+
+	If KeyHit(KEY_B)
+		If shift 
+			bw_threshold = bw_threshold + 16
+			If bw_threshold > (256-16) bw_threshold = 16
+		Else
+			black_white = 1-black_white
+		EndIf
 	EndIf
 
 	If KeyHit(KEY_T)
@@ -630,52 +647,59 @@ Repeat
 	DrawText "sx "+cur_an.end_sc_x,infodisplayx ,blockstarty+80
 	DrawText "sy "+cur_an.end_sc_y,infodisplayx ,blockstarty+90
 
-	blockstarty = 360
+	blockstarty = 340
 	DrawText "Animation Segment: "+anim_index,infodisplayx ,blockstarty
-	DrawText "Shape  "+cur_an.image_number,infodisplayx ,blockstarty+20
-	DrawText image_filename[cur_an.image_number],infodisplayx+10,blockstarty+30
-	DrawText "Delay ms:          "+cur_an.delaysteps*MS_PER_FRAME,infodisplayx ,blockstarty+50
+	DrawText "Shape  "+cur_an.image_number,infodisplayx ,blockstarty+22
+	DrawText image_filename[cur_an.image_number],infodisplayx+10,blockstarty+34
+	DrawText "Delay ms:          "+cur_an.delaysteps*MS_PER_FRAME,infodisplayx ,blockstarty+58
 	If cur_an.startOn = 1
-		DrawText "Visible at Start:  YES",infodisplayx ,blockstarty+60
+		DrawText "Visible at Start:  YES",infodisplayx ,blockstarty+70
 	Else
-		DrawText "Visible at Start:  NO",infodisplayx ,blockstarty+60
+		DrawText "Visible at Start:  NO",infodisplayx ,blockstarty+70
 	EndIf
 	If cur_an.EndOn = 1
-		DrawText "Visible at End:    YES",infodisplayx ,blockstarty+70
+		DrawText "Visible at End:    YES",infodisplayx ,blockstarty+82
 	Else
-		DrawText "Visible at End:    NO",infodisplayx ,blockstarty+70
+		DrawText "Visible at End:    NO",infodisplayx ,blockstarty+82
 	EndIf
-	DrawText "Anim Duration ms:  "+cur_an.duration,infodisplayx ,blockstarty+80
-	DrawText "Anim Steps:        "+Int(cur_an.duration/MS_PER_FRAME),infodisplayx ,blockstarty+90
-	DrawText "Total Steps:       "+(Int(cur_an.duration/MS_PER_FRAME)+cur_an.delaysteps),infodisplayx ,blockstarty+100
+	DrawText "Anim Duration ms:  "+cur_an.duration,infodisplayx ,blockstarty+94
+	DrawText "Anim Steps:        "+Int(cur_an.duration/MS_PER_FRAME),infodisplayx ,blockstarty+106
+	DrawText "Total Steps:       "+(Int(cur_an.duration/MS_PER_FRAME)+cur_an.delaysteps),infodisplayx ,blockstarty+118
 
 
 	If ledsonly = 1
-		DrawText "SHOWING LEDs (SHAPES HIDDEN)",infodisplayx ,blockstarty+120
+		DrawText "SHOWING LEDs (SHAPES HIDDEN)",infodisplayx ,blockstarty+130
 	Else
-		DrawText "SHOWING SHAPES",infodisplayx ,blockstarty+120
+		DrawText "SHOWING SHAPES",infodisplayx ,blockstarty+130
+	EndIf
+
+	If black_white = 1
+		DrawText "BLACK AND WHITE ("+bw_threshold+")",infodisplayx ,blockstarty+142
+	Else
+		DrawText "FULL COLOUR",infodisplayx ,blockstarty+142
 	EndIf
 	
 	blockstarty = 520
 	DrawText "    KEYS",infodisplayx ,blockstarty
 	
-	DrawText "T - Change Image",infodisplayx ,blockstarty+20
+	DrawText "T - Change Image",infodisplayx ,blockstarty+18
 	DrawText "A - Adjust Rotation ",infodisplayx ,blockstarty+30
-	DrawText "S - Adjust Scale X",infodisplayx ,blockstarty+40
-	DrawText "X - Adjust Scale Y",infodisplayx ,blockstarty+50
-	DrawText "C - Adjust Scale XY",infodisplayx ,blockstarty+60
-	DrawText "  +SHIFT for Negative",infodisplayx ,blockstarty+70
-	DrawText "  +CTRL  for  x10",infodisplayx ,blockstarty+80
+	DrawText "S - Adjust Scale X",infodisplayx ,blockstarty+42
+	DrawText "X - Adjust Scale Y",infodisplayx ,blockstarty+54
+	DrawText "C - Adjust Scale XY",infodisplayx ,blockstarty+66
+	DrawText "  +SHIFT for Negative",infodisplayx ,blockstarty+78
+	DrawText "  +CTRL  for  x10",infodisplayx ,blockstarty+90
 
-	DrawText "I - FLASH START/FINISH",infodisplayx ,blockstarty+100
-	DrawText "U - PLAY SEGMENT",infodisplayx ,blockstarty+110
-	DrawText "L - TOGGLE SHAPES/LEDS",infodisplayx ,blockstarty+120
-	DrawText "SPC - TOGGLE START/FINISH",infodisplayx ,blockstarty+130
-	DrawText "M - HOLD FOR SLOWMO",infodisplayx ,blockstarty+140
+	DrawText "I - FLASH START/FINISH",infodisplayx ,blockstarty+102
+	DrawText "U - PLAY SEGMENT",infodisplayx ,blockstarty+114
+	DrawText "L - TOGGLE SHAPES/LEDS",infodisplayx ,blockstarty+126
+	DrawText "B - TOGGLE BW/COLOUR",infodisplayx ,blockstarty+138
+	DrawText "SPC - TOGGLE START/FINISH",infodisplayx ,blockstarty+150
+	DrawText "M - HOLD FOR SLOWMO",infodisplayx ,blockstarty+162
 	
-	DrawText "P - PLAY SET",infodisplayx ,blockstarty+160
-	DrawText "P+SHIFT - SAVE SCRIPT",infodisplayx ,blockstarty+170
-	DrawText "ESC - QUIT",infodisplayx ,blockstarty+180
+	DrawText "P - PLAY SET",infodisplayx ,blockstarty+180
+	DrawText "P+SHIFT - SAVE SCRIPT",infodisplayx ,blockstarty+192
+	DrawText "ESC - QUIT",infodisplayx ,blockstarty+214
 
 	'colour graphs
 	DrawText " START", col_start_x, col_start_y
@@ -764,15 +788,47 @@ Repeat
 	EndIf 
 	led.DrawLeds()
 
-  Flip
+	Flip
 	If KeyDown(KEY_M) Delay 500
 
-Until KeyHit(KEY_ESCAPE)
+	If KeyHit(KEY_ESCAPE)
+		gamedone = Conf()
+	EndIf							
+
+Until gamedone 
 
 End 
 
 '-----------------------------------------------------------------------------------------------------
 
+
+
+
+Function Conf:Int()
+
+	Local done:Int = False
+	Local qt = False
+	Local tim, cnt
+	
+	ShowContext("Quit? Y/N")
+	SetColor 250,250,250 
+	Flip
+	
+	FlushKeys()
+	While Not done
+		tim = MilliSecs()		
+
+		If KeyHit(KEY_Y) Then qt=True;done=True
+		If KeyHit(KEY_N) Then qt=False;done=True
+
+		cnt:+1
+		tim = MilliSecs() - tim
+		If tim < 20 And tim > 0
+			Delay 20-tim
+		EndIf
+	Wend
+	Return qt
+End Function
 
 
 
@@ -1726,6 +1782,22 @@ Type led
 		prev_g = g
 		prev_b = b				
 		pixColor = GetPixel(x, y)
+		
+		If black_white					
+			If pixColor.red < bw_threshold Then pixColor.red = 0 Else pixColor.red = 255
+			If pixColor.green < bw_threshold Then pixColor.green = 0 Else pixColor.green = 255
+			If pixColor.blue < bw_threshold Then pixColor.blue = 0 Else pixColor.blue = 255
+			If pixColor.red > 0 Or pixColor.green > 0 Or pixColor.blue > 0
+				pixColor.red = 255
+				pixColor.green = 255
+				pixColor.blue = 255
+			Else
+				pixColor.red = 0
+				pixColor.green = 0
+				pixColor.blue = 0
+			EndIf
+		EndIf
+		
 		If g_write_to_file = 1
 			r = pixColor.red
 			g = pixColor.green
@@ -1753,10 +1825,11 @@ Type led
 		
 	End Method
 		
-	Function dumpState(diff=0)	
+	Function dumpState(diff=0)
 		Local p:led, t:Int
 		Local r$, g$, b$
 		Local cnt:Int = 0
+		
 		For t = 0 To num_leds-1
 			p:led = ledarray[t]
 			If p.active > 0
@@ -1781,26 +1854,20 @@ Type led
 			For t = 0 To num_leds-1
 				p:led = ledarray[t]
 				If p.active > 0
+					r$ = Mid(Hex(p.r), 7, 2)
+					g$ = Mid(Hex(p.g), 7, 2)
+					b$ = Mid(Hex(p.b), 7, 2)
 					If diff = 0
-						r$ = Mid(Hex(p.r), 7, 2)
-						g$ = Mid(Hex(p.g), 7, 2)
-						b$ = Mid(Hex(p.b), 7, 2)
 						write_a_line("    "+p.name+": '"+ r+g+b+"'")
 					Else
 						If (p.prev_r <> p.r Or p.prev_g <> p.g Or p.prev_b <> p.b)					
 							If fade_out
 								If p.r > 0 Or p.g > 0 Or p.b > 0	
-									r$ = Mid(Hex(p.r), 7, 2)
-									g$ = Mid(Hex(p.g), 7, 2)
-									b$ = Mid(Hex(p.b), 7, 2)
 									write_a_line("    "+p.name+":")
 									write_a_line("        color: '"+ r+g+b +"'")
 									write_a_line("        fade: 100ms")
 								EndIf
 							Else				
-								r$ = Mid(Hex(p.r), 7, 2)
-								g$ = Mid(Hex(p.g), 7, 2)
-								b$ = Mid(Hex(p.b), 7, 2)
 								write_a_line("    "+p.name+": '"+ r+g+b+"'")
 							EndIf
 						EndIf
