@@ -12,17 +12,25 @@ Pinlandia - LED.BMX
 
 ****************    TODO     ***********************
 
-	- add a B/W toggle - either 000000 or FFFFFF based on threshold
 	- add a repeat/loop button (non-save only)
 	- FPS selector
 	- code refactor - move functions into types
-	- led loading from monitor.yaml 
 	- widebody/standard toggle (currently wide only)
 
+****************    Done   *************************
+
+	- led loading from monitor.yaml 
+	- add a B/W toggle - either 000000 or FFFFFF based on threshold
+
 ****************  History  *************************
+- V2.0 - 2019/03/31
+	- load light section from user selected yaml file at startup
+	- load new light layout from menu
+	- renamed ShowCreator
+	
 - V1.9 - 2019/03/10
 	- add an ESC -> Quit confirm y/n
-	- B/W toggle with B, B+SHIFT chnage threshold level (16-240)/256 
+	- B/W toggle with B, B+SHIFT change threshold level (16-240)/256 
 
 - V1.8 - 2019/03/09
 	- add flushmouse and flushkeys to prevent false clicks after file loads
@@ -76,7 +84,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V1.9 - 2019-03-10"
+AppTitle$ = "Pinlandia - V2.0 - 2019-03-31"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -87,7 +95,7 @@ Global ms_per_frame:Int = 33
 Graphics 800, 800, 0
 SetClsColor 0, 0, 0
 
-Const cMAXLEDS = 256
+Const cMAXLEDS = 1024
 Const cMAXANIMS = 256
 Const cMAXIMAGES = 1000
 Const cDURATION = 1023
@@ -103,7 +111,8 @@ Global pixColor:appColor = New appColor
 Global num_leds = 0
 Global ledarray:led[]
 ledarray = New led[cMAXLEDS]
-SetUpLeds()
+'SetUpLeds()
+LoadLedsFromMonitor()
 
 Global num_images:Int = 0
 Global images:TImage[]
@@ -376,6 +385,15 @@ Repeat
 					FlushKeys()
 					FlushMouse()
 				EndIf
+				
+				'LOAD LIGHTS
+				If my > 410 And my < 410+10
+					led.DeleteAllLeds()
+					LoadLedsFromMonitor()
+					FlushKeys()
+					FlushMouse()
+				EndIf
+				
 			EndIf
 		EndIf
 	EndIf 
@@ -612,6 +630,14 @@ Repeat
 		SetColor 180,180,180
 	EndIf
 	DrawText "SAVE SET", 650, 370
+
+	If mouseover(650,410)
+		ShowContext("Load a new light set from a monitor.yaml file")
+		SetColor 250,250,250 
+	Else 
+		SetColor 180,180,180
+	EndIf
+	DrawText "LOAD LIGHTS", 650, 410
 
 	SetColor 180,180,180
 	Local blockstarty = 10
@@ -1724,6 +1750,13 @@ Type led
 	Field prev_r:Int, prev_g:Int, prev_b:Int
 	Field active:Int
 	Field num_leds:Int
+	
+	Function DeleteAllLeds()	
+		For Local t:Int = 0 To num_leds
+			ledarray[t] = Null
+		Next
+		num_leds = 0
+	End Function	
 
 	Function CreateLed( name$, x#, y# )	
 		Local t:Int = num_leds 
@@ -1998,7 +2031,64 @@ Function LoadSegment(segmentNum:Int)
 	EndIf	
 	
 End Function
+
+
+
+Function LoadLedsFromMonitor()
+
+	Local fh:TStream
+	Local lfn$ = "monitor.yaml"
+	Local filter$ = "Monitor yaml Files:yaml;All Files:*"
+	Local fn$ = RequestFile( "Load Leds From Monitor",filter$, False, CurrentDir()+"/"+lfn$)
+	
+	fh = ReadFile(fn$)
+	If fh <> Null
+		SetUpLeds2(fh)
+		CloseFile(fh)	
+	Else
+		DebugLog("Error Opening File: "+fn$)				
+	EndIf	
+	
+End Function
 	
 
+
+Function SetUpLeds2(fh:TStream)
+
+	Local ln$
+	Local ledname$
+	Local xf:Float, yf:Float
+	Local lnum% = 0
+	Local done% = 0
+
+	If fh <> Null
+		'eat up all the lines until lights section
+		While Not Eof(fh) And ln$ <> "light:"
+			ln$ = Trim(ReadLine(fh))
+			'DebugLog(ln$)
+		Wend
+		If ln$ = "light:" Then
+			While Not Eof(fh) And Not done
+				ln$ = Trim(ReadLine(fh))
+				'DebugLog(ln$)
+				If ln$ <> "servo:" And ln$ <> "switch:" Then
+					ledname$ = ParseString$(ln$, 1,":")
+					ln$ = ReadLine(fh)
+					xf = Float(ParseString$(ln$, 2,":"))
+					ln$ = ReadLine(fh)
+					yf = Float(ParseString$(ln$, 2,":"))
+					'DebugLog(ledname$+Int(xf*400)+Int(yf*800))
+					led.CreateLed(ledname, 25+Int(xf*350), 50+Int(yf*700))
+				Else
+					done = True
+				EndIf
+			Wend
+		EndIf
+		CloseFile fh
+	EndIf			
+	
+End Function
+
+	
 	
 	
