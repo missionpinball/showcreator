@@ -1,0 +1,89 @@
+#show_version=5
+- time: 0
+  lights:
+    rgb_bug_1: 'F178F1'
+    rgb_bug_2: 'F178F1'
+    rgb_bug_3: 'F178F1'
+    
+- time: '+1'
+  lights:
+    rgb_bug_1: 'E471E4'
+    rgb_bug_2: 'E471E4'
+    rgb_bug_3: 'E471E4'
+    rgb_oogie_mode_6: 'E471E4'
+    
+- time: '+1'
+  lights:
+    rgb_bug_1: 'D76AD7'
+    rgb_bug_2: 'D76AD7'
+    rgb_bug_3: 'D76AD7'
+    rgb_oogie_mode_6: 'D76AD7'
+    
+- time: '+1'
+  lights:
+    rgb_bug_1: '000000'
+    rgb_bug_2: '000000'
+    rgb_bug_3: '000000'
+    rgb_oogie_mode_6: 'C963CA'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_5: 'BC5CBD'
+    rgb_oogie_mode_6: 'BC5CBD'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_5: 'AF54AF'
+    rgb_oogie_mode_6: 'AF54AF'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_4: 'A24DA2'
+    rgb_oogie_mode_5: 'A24DA2'
+    rgb_oogie_mode_6: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_4: '944695'
+    rgb_oogie_mode_5: '944695'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_3: '873F88'
+    rgb_oogie_mode_4: '873F88'
+    rgb_oogie_mode_5: '873F88'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_3: '7A387B'
+    rgb_oogie_mode_4: '7A387B'
+    rgb_oogie_mode_5: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_3: '6D306D'
+    rgb_oogie_mode_4: '6D306D'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '5F2960'
+    rgb_oogie_mode_3: '5F2960'
+    rgb_oogie_mode_4: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '522253'
+    rgb_oogie_mode_3: '522253'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_1: '451B46'
+    rgb_oogie_mode_2: '451B46'
+    rgb_oogie_mode_3: '451B46'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_1: '381439'
+    rgb_oogie_mode_2: '381439'
+    rgb_oogie_mode_3: '000000'
+    

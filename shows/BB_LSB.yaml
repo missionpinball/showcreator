@@ -1,0 +1,108 @@
+#show_version=5
+- time: 0
+  lights:
+    rgb_barrel_rect: 'F179F2'
+    rgb_lock_rect: 'F179F2'
+    rgb_shock_rect: 'F179F2'
+    
+- time: '+1'
+  lights:
+    rgb_barrel_rect: 'E472E5'
+    rgb_lock_rect: 'E472E5'
+    rgb_shock_rect: 'E472E5'
+    
+- time: '+1'
+  lights:
+    rgb_barrel_rect: 'D76BD8'
+    rgb_lock_rect: 'D76BD8'
+    rgb_shock_rect: 'D76BD8'
+    
+- time: '+1'
+  lights:
+    rgb_barrel_rect: 'CA65CB'
+    rgb_lock_rect: 'CA65CB'
+    rgb_oogie_mode_6: 'CA65CB'
+    rgb_shock_rect: 'CA65CB'
+    
+- time: '+1'
+  lights:
+    rgb_barrel_rect: '000000'
+    rgb_lock_rect: 'BD5EBE'
+    rgb_oogie_mode_4: 'BD5EBE'
+    rgb_oogie_mode_5: 'BD5EBE'
+    rgb_oogie_mode_6: 'BD5EBE'
+    rgb_shock_rect: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_lock_rect: '000000'
+    rgb_oogie_mode_2: 'B057B1'
+    rgb_oogie_mode_3: 'B057B1'
+    rgb_oogie_mode_4: 'B057B1'
+    rgb_oogie_mode_5: 'B057B1'
+    rgb_oogie_mode_6: 'B057B1'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: 'A350A4'
+    rgb_oogie_mode_3: 'A350A4'
+    rgb_oogie_mode_4: 'A350A4'
+    rgb_oogie_mode_5: 'A350A4'
+    rgb_oogie_mode_6: 'A350A4'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '954A97'
+    rgb_oogie_mode_3: '954A97'
+    rgb_oogie_mode_4: '954A97'
+    rgb_oogie_mode_5: '954A97'
+    rgb_oogie_mode_6: '954A97'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '88438A'
+    rgb_oogie_mode_3: '88438A'
+    rgb_oogie_mode_4: '88438A'
+    rgb_oogie_mode_5: '88438A'
+    rgb_oogie_mode_6: '88438A'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '7B3C7D'
+    rgb_oogie_mode_3: '7B3C7D'
+    rgb_oogie_mode_4: '7B3C7D'
+    rgb_oogie_mode_5: '7B3C7D'
+    rgb_oogie_mode_6: '7B3C7D'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '6E3570'
+    rgb_oogie_mode_3: '6E3570'
+    rgb_oogie_mode_4: '6E3570'
+    rgb_oogie_mode_5: '6E3570'
+    rgb_oogie_mode_6: '6E3570'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '612F63'
+    rgb_oogie_mode_3: '612F63'
+    rgb_oogie_mode_4: '612F63'
+    rgb_oogie_mode_5: '612F63'
+    rgb_oogie_mode_6: '612F63'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_mode_2: '000000'
+    rgb_oogie_mode_3: '000000'
+    rgb_oogie_mode_4: '000000'
+    rgb_oogie_mode_5: '000000'
+    rgb_oogie_mode_6: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

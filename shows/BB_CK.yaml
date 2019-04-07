@@ -1,0 +1,76 @@
+#show_version=5
+- time: 0
+  lights:
+    rgb_oogie_moon2: '000000'
+    rgb_rramp_arrow: 'F278F2'
+    rgb_rramp_ldiamond: 'F278F2'
+    rgb_rramp_rdiamond: 'F278F2'
+    rgb_soup_circle: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_arrow: 'E571E5'
+    rgb_rramp_circle: 'E571E5'
+    rgb_rramp_ldiamond: 'E571E5'
+    rgb_rramp_rdiamond: 'E571E5'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_arrow: 'D86AD8'
+    rgb_rramp_circle: 'D86AD8'
+    rgb_rramp_ldiamond: 'D86AD8'
+    rgb_rramp_rdiamond: 'D86AD8'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_arrow: '000000'
+    rgb_rramp_circle: 'CB63CB'
+    rgb_rramp_ldiamond: '000000'
+    rgb_rramp_rdiamond: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_circle: 'BE5CBE'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_circle: 'B254B1'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_circle: 'A54DA4'
+    
+- time: '+1'
+  lights:
+    rgb_rramp_circle: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_moon2: '4B1B49'
+    rgb_soup_circle: '4B1B49'
+    
+- time: '+1'
+  lights:
+    rgb_oogie_moon2: '3E143C'
+    rgb_soup_circle: '3E143C'
+    

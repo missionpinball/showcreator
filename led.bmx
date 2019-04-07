@@ -23,6 +23,9 @@ Pinlandia - LED.BMX
 	- add a B/W toggle - either 000000 or FFFFFF based on threshold
 
 ****************  History  *************************
+- V2.1 - 2019/04/06
+	- added a reset segment button
+
 - V2.0 - 2019/03/31
 	- load light section from user selected yaml file at startup
 	- load new light layout from menu
@@ -84,7 +87,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V2.0 - 2019-03-31"
+AppTitle$ = "Pinlandia - V2.1- 2019-03-31"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -357,6 +360,11 @@ Repeat
 					SetGlobalValues()
 				EndIf
 
+				'reset SEGMENT
+				If my > 270 And my < 270+10
+					ResetSegment()
+				EndIf
+
 				'LOAD SEGMENT
 				If my > 310 And my < 310+10
 					LoadSegment(anim_index)
@@ -598,6 +606,14 @@ Repeat
 		SetColor 180,180,180
 	EndIf
 	DrawText "PASTE SEGMENT", 650, 250
+
+	If mouseover(650,270)
+		ShowContext("Reset animation segment (scale, rotation, position)")
+		SetColor 250,250,250 
+	Else 
+		SetColor 180,180,180
+	EndIf
+	DrawText "RESET SEGMENT", 650, 270
 
 	If mouseover(650,310)
 		ShowContext("Load (from file) complete animation segment (START and FINISH)")
@@ -1033,6 +1049,10 @@ Type animation
 	Method cycle_image()
 		image_number = (image_number + 1) Mod num_images
 	End Method
+
+	Method set_image(im:Int)
+		image_number = im
+	End Method
 	
 	Method set_position(px:Int, py:Int, se:Int)
 		If se = 1
@@ -1388,6 +1408,26 @@ End Type
 
 
 
+Function ResetSegment()
+
+	cur_an.set_r(128,1)
+	cur_an.set_g(128,1)
+	cur_an.set_b(128,1)
+	cur_an.set_scale_x(1,1)
+	cur_an.set_scale_y(1,1)
+	cur_an.set_rotation(0,1)
+	cur_an.set_position(200,350,1)
+
+	cur_an.set_r(128,0)
+	cur_an.set_g(128,0)
+	cur_an.set_b(128,0)
+	cur_an.set_scale_x(1,0)
+	cur_an.set_scale_y(1,0)
+	cur_an.set_rotation(0,0)
+	cur_an.set_position(200,350,0)
+	cur_an.set_image(0)
+
+End Function
 
 
 Function ReverseToFrom()

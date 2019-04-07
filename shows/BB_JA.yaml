@@ -1,0 +1,103 @@
+#show_version=5
+- time: 0
+  lights:
+    rgb_holiday_christmas: '000000'
+    rgb_holiday_thanksgiving: '000000'
+    rgb_jack_circle: '000000'
+    rgb_lramp_arrow: 'F178F1'
+    rgb_lramp_circle: 'F178F1'
+    rgb_lramp_ldiamond: 'F178F1'
+    rgb_lramp_rdiamond: 'F178F1'
+    
+- time: '+1'
+  lights:
+    rgb_lramp_arrow: 'E471E4'
+    rgb_lramp_circle: 'E471E4'
+    rgb_lramp_ldiamond: 'E471E4'
+    rgb_lramp_rdiamond: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_lramp_arrow: '000000'
+    rgb_lramp_circle: 'D76AD7'
+    rgb_lramp_ldiamond: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_lramp_circle: 'CA63C9'
+    
+- time: '+1'
+  lights:
+    rgb_bathtub_rect: 'BD5CBC'
+    rgb_lramp_circle: 'BD5CBC'
+    rgb_mayor_c_circle: 'BD5CBC'
+    
+- time: '+1'
+  lights:
+    rgb_bathtub_rect: 'B054AF'
+    rgb_lramp_circle: '000000'
+    rgb_mayor_c_circle: 'B054AF'
+    
+- time: '+1'
+  lights:
+    rgb_bathtub_rect: 'A34DA2'
+    rgb_mayor_c_circle: 'A34DA2'
+    rgb_mayor_circle: 'A34DA2'
+    
+- time: '+1'
+  lights:
+    rgb_bathtub_rect: '964694'
+    rgb_charwiz_rect: '964694'
+    rgb_mayor_c_circle: '964694'
+    rgb_mayor_circle: '964694'
+    
+- time: '+1'
+  lights:
+    rgb_bathtub_rect: '893F87'
+    rgb_charwiz_rect: '893F87'
+    rgb_mayor_c_circle: '893F87'
+    rgb_mayor_circle: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_bathtub_rect: '000000'
+    rgb_charwiz_rect: '7C387A'
+    rgb_christmastime_rect: '7C387A'
+    rgb_mayor_c_circle: '7C387A'
+    rgb_sally_circle: '7C387A'
+    
+- time: '+1'
+  lights:
+    rgb_charwiz_rect: '6F306D'
+    rgb_christmastime_rect: '6F306D'
+    rgb_mayor_c_circle: '000000'
+    rgb_sally_circle: '6F306D'
+    
+- time: '+1'
+  lights:
+    rgb_charwiz_rect: '62295F'
+    rgb_christmastime_rect: '62295F'
+    rgb_sally_circle: '62295F'
+    
+- time: '+1'
+  lights:
+    rgb_charwiz_rect: '000000'
+    rgb_christmastime_rect: '552252'
+    rgb_jack_circle: '552252'
+    rgb_sally_circle: '552252'
+    
+- time: '+1'
+  lights:
+    rgb_christmastime_rect: '481B45'
+    rgb_holiday_christmas: '481B45'
+    rgb_holiday_thanksgiving: '481B45'
+    rgb_jack_circle: '481B45'
+    rgb_sally_circle: '000000'
+    
+- time: '+1'
+  lights:
+    rgb_christmastime_rect: '000000'
+    rgb_holiday_christmas: '3B1438'
+    rgb_holiday_thanksgiving: '3B1438'
+    rgb_jack_circle: '3B1438'
+    
