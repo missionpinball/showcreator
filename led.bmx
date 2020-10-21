@@ -8,10 +8,11 @@ Pinlandia - LED.BMX
 
 	- What is it?:      MPF LED show script generator
 	- Language:         Blitxmax
-	- Programmed by:    Mark Incitti - 2017, 2018, 2019
+	- Programmed by:    Mark Incitti - 2017, 2018, 2019, 2020
 
 ****************    TODO     ***********************
 
+	- add shape, rot, size display (in progress fall 2020)
 	- add a repeat/loop button (non-save only)
 	- FPS selector
 	- code refactor - move functions into types
@@ -23,6 +24,24 @@ Pinlandia - LED.BMX
 	- add a B/W toggle - either 000000 or FFFFFF based on threshold
 
 ****************  History  *************************
+- V3.04 - 2020/10/21
+	- correct output of non changing leds
+
+- V3.03 - 2020/10/20
+	- add transparency 
+	- output 'stop' instead of 000000 (or below BW threshold)
+
+- V3.02 - 2020/10/16
+	- mac build
+	- move status message to top
+	- move RGB sliders up 20 pixels
+
+- V3.01 - 2020/09/13
+	- diamonds
+
+- V3.0 - 2020/08
+	- revamp the lights loading to handle shape, rotation, size fields
+
 - V2.1 - 2019/04/06
 	- added a reset segment button
 
@@ -87,7 +106,7 @@ Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V2.1- 2019-03-31"
+AppTitle$ = "Pinlandia - V3.04 - 2020-10-21"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -148,19 +167,31 @@ Global flash:Int = 0
 Global ledsonly:Int = 0
 Global slowmo:Int = 0
 Global blendit:Int = 1
-Global black_white:Int = 0 
+Global black_white_trans:Int = 0 
 Global bw_threshold:Int = 32 
-
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
 
 Local col_start_x = 650
-Local col_start_y = 490
+Local col_start_y = 460
 Local col_end_x = col_start_x + 80
 
-Global fade_out = False
 Global gamedone:Int = 0
+
+
+Global p_circ#[36]
+For Local t = 0 To 17 
+	p_circ[t*2] = Cos(t*20)*8
+	p_circ[t*2+1] = Sin(t*20)*8
+Next
+Global p_square#[]=[16.0,16.0, 16.0,-16.0, -16.0,-16.0, -16.0,16.0]
+Global p_diamond#[]=[0.0,6.0, 12.0,0.0, 0.0,-6.0, -12.0,0.0]
+Global p_triangle#[]=[0.0,8.0, 6.0,-4.0, -6.0,-4.0]
+Global p_rectangle#[]=[-10.0,-5.0, 10.0,-5.0, 10.0,5.0, -10.0,5.0]
+Global p_arrow#[]=[12.0,12.0, 12.0,-12.0, -12.0,-12.0, -12.0,12.0]
+Global p_flipper#[]=[0.0,0.0, -36.0,9.0, -36.0,-9.0]
+
 
 
 '-- main loop  ---------------------------------------------------------------------------------------------------
@@ -235,10 +266,16 @@ Repeat
 
 	If KeyHit(KEY_B)
 		If shift 
-			bw_threshold = bw_threshold + 16
-			If bw_threshold > (256-16) bw_threshold = 16
+			bw_threshold = bw_threshold + 8
+			If bw_threshold > (256-8) bw_threshold = 8
 		Else
-			black_white = 1-black_white
+			If black_white_trans = 0 
+				black_white_trans = 1
+			ElseIf black_white_trans = 1
+				black_white_trans = 2
+			Else
+				black_white_trans = 0
+			End If			
 		EndIf
 	EndIf
 
@@ -715,13 +752,16 @@ Repeat
 		DrawText "SHOWING SHAPES",infodisplayx ,blockstarty+130
 	EndIf
 
-	If black_white = 1
+	If black_white_trans = 1
 		DrawText "BLACK AND WHITE ("+bw_threshold+")",infodisplayx ,blockstarty+142
+	ElseIf black_white_trans = 2
+		DrawText "TRANSPARENT ("+bw_threshold+")",infodisplayx ,blockstarty+142
 	Else
 		DrawText "FULL COLOUR",infodisplayx ,blockstarty+142
 	EndIf
+
 	
-	blockstarty = 520
+	blockstarty = 500
 	DrawText "    KEYS",infodisplayx ,blockstarty
 	
 	DrawText "T - Change Image",infodisplayx ,blockstarty+18
@@ -735,7 +775,7 @@ Repeat
 	DrawText "I - FLASH START/FINISH",infodisplayx ,blockstarty+102
 	DrawText "U - PLAY SEGMENT",infodisplayx ,blockstarty+114
 	DrawText "L - TOGGLE SHAPES/LEDS",infodisplayx ,blockstarty+126
-	DrawText "B - TOGGLE BW/COLOUR",infodisplayx ,blockstarty+138
+	DrawText "B - BW/COLOUR/TRANS",infodisplayx ,blockstarty+138
 	DrawText "SPC - TOGGLE START/FINISH",infodisplayx ,blockstarty+150
 	DrawText "M - HOLD FOR SLOWMO",infodisplayx ,blockstarty+162
 	
@@ -745,7 +785,7 @@ Repeat
 
 	'colour graphs
 	DrawText " START", col_start_x, col_start_y
-	DrawText "  END", col_end_x, col_start_y
+	DrawText "FINISH", col_end_x, col_start_y
 	For Local t:Int = 0 To 255
 		SetColor t,0,0
 		DrawRect col_start_x,col_start_y+20+t,10,1
@@ -878,10 +918,12 @@ End Function
 Function ShowContext(txt$)
 
 	SetColor 80,80,80
-	DrawRect 20,750,610,40	
+	'DrawRect 20,750,610,40	
+	DrawRect 20,10-4,610,40
 	SetColor 240,240,240
 	
-	DrawText txt, 30,760
+	'DrawText txt, 30,760
+	DrawText txt, 30,20-4
 	
 End Function
 
@@ -1716,7 +1758,7 @@ Function GetPixel:appColor(x:Int, y:Int)
 End Function
 
 
-
+Rem
 Function SetUpLeds()
 
 	Local fh:TStream, fn$
@@ -1743,6 +1785,7 @@ Function SetUpLeds()
 	EndIf			
 	
 End Function
+End Rem
 
 	
 	
@@ -1787,6 +1830,7 @@ Type led
 
 	Field name$, x#, y#
 	Field r:Int, g:Int, b:Int
+	Field shape$, size#, rot# 
 	Field prev_r:Int, prev_g:Int, prev_b:Int
 	Field active:Int
 	Field num_leds:Int
@@ -1798,24 +1842,31 @@ Type led
 		num_leds = 0
 	End Function	
 
-	Function CreateLed( name$, x#, y# )	
+
+		'					led.CreateLed(ledname, 25+Int(xf*350), 50+Int(yf*700))
+'							led.CreateLed(ledname, xf, yf, shape, size, rot)
+	Function CreateLed( name$, x#, y#, shape$, size#, rot# )	
 		Local t:Int = num_leds 
 		ledarray[t] = New led
 		ledarray[t].name = name
-		ledarray[t].x = x
-		ledarray[t].y = y
+		ledarray[t].x = 25+Int(x*350)
+		ledarray[t].y = 50+Int(y*700)
 		ledarray[t].r = 0
 		ledarray[t].g = 0
 		ledarray[t].b = 0
+		ledarray[t].shape = shape
+		ledarray[t].size = size*16
+		ledarray[t].rot = rot+270    'rotate 270 degrees to match 
 		ledarray[t].active = 1
 		ledarray[t].prev_r = 0
 		ledarray[t].prev_g = 0
 		ledarray[t].prev_b = 0
 		num_leds = num_leds + 1
-		'DebugLog "LED "+num_leds+" created"
+		DebugLog "LED "+num_leds+" created"
 	End Function	
 	
 	Function DrawLeds()
+
 		Local p:led
 		Local t:Int
 		
@@ -1826,17 +1877,65 @@ Type led
 		For t = 0 To num_leds-1
 			p:led= ledarray[t]
 			If p.active > 0
-				SetColor 200,200,200
-				DrawLine p.x-4,p.y-4,p.x+4,p.y-4
-				DrawLine p.x-4,p.y-4,p.x-4,p.y+4
-				DrawLine p.x+4,p.y-4,p.x+4,p.y+4
-				DrawLine p.x-4,p.y+4,p.x+4,p.y+4
+				SetColor 80,80,80
+
+				SetScale p.size,p.size
+				SetOrigin p.x,p.y
+				SetRotation(p.rot)
+				
+				Select p.shape
+					Case "DIAMOND"
+						DrawPoly p_diamond
+					Case "RECTANGLE"
+						DrawPoly p_rectangle
+					Case "FLIPPER"
+						DrawPoly p_flipper
+					Case "CIRCLE"
+						DrawPoly p_circ
+					Case "SQUARE"
+						DrawPoly p_square
+					Case "ARROW"
+						DrawPoly p_arrow
+					Case "TRIANGLE"
+						DrawPoly p_triangle
+				End Select 
+								
+'				DrawLine p.x-4,p.y-4,p.x+4,p.y-4
+'				DrawLine p.x-4,p.y-4,p.x-4,p.y+4
+'				DrawLine p.x+4,p.y-4,p.x+4,p.y+4
+'				DrawLine p.x-4,p.y+4,p.x+4,p.y+4
 				If ledsonly
 					SetColor p.r,p.g,p.b
-					DrawRect p.x-7,p.y-7,15,15
+					'DrawRect p.x-7,p.y-7,15,15
+		
+'					SetScale p.size,p.size
+'					SetOrigin p.x,p.y
+'					SetRotation(p.rot)
+					
+					Select p.shape
+						Case "DIAMOND"
+							DrawPoly p_diamond
+						Case "RECTANGLE"
+							DrawPoly p_rectangle
+						Case "FLIPPER"
+							DrawPoly p_flipper
+						Case "CIRCLE"
+							DrawPoly p_circ
+						Case "SQUARE"
+							DrawPoly p_square
+						Case "ARROW"
+							DrawPoly p_arrow
+						Case "TRIANGLE"
+							DrawPoly p_triangle
+					End Select 
+					
 				EndIf
 			EndIf
 		Next	
+				
+		SetScale 1,1
+		SetOrigin 0,0		
+		SetRotation(0)
 					
 	End Function
 	
@@ -1856,7 +1955,7 @@ Type led
 		prev_b = b				
 		pixColor = GetPixel(x, y)
 		
-		If black_white					
+		If black_white_trans = 1				
 			If pixColor.red < bw_threshold Then pixColor.red = 0 Else pixColor.red = 255
 			If pixColor.green < bw_threshold Then pixColor.green = 0 Else pixColor.green = 255
 			If pixColor.blue < bw_threshold Then pixColor.blue = 0 Else pixColor.blue = 255
@@ -1869,14 +1968,23 @@ Type led
 				pixColor.green = 0
 				pixColor.blue = 0
 			EndIf
+		ElseIf black_white_trans = 2
+			If pixColor.red < bw_threshold Then pixColor.red = 0
+			If pixColor.green < bw_threshold Then pixColor.green = 0
+			If pixColor.blue < bw_threshold Then pixColor.blue = 0
 		EndIf
-		
+
+		r = pixColor.red
+		g = pixColor.green
+		b = pixColor.blue
+
+Rem		
 		If g_write_to_file = 1
 			r = pixColor.red
 			g = pixColor.green
 			b = pixColor.blue
 		Else	
-			If fade_out	
+			If transparent_end	
 				If pixColor.red > 0 Or pixColor.green > 0 Or pixColor.blue > 0
 					r = pixColor.red
 					g = pixColor.green
@@ -1895,6 +2003,7 @@ Type led
 				b = pixColor.blue
 			EndIf
 		EndIf
+End Rem
 		
 	End Method
 		
@@ -1910,18 +2019,19 @@ Type led
 					cnt=cnt+1
 				Else
 					If (p.prev_r <> p.r Or p.prev_g <> p.g Or p.prev_b <> p.b)	
-						If fade_out
-							If p.r > 0 Or p.g > 0 Or p.b > 0	
-								cnt=cnt+1
-							EndIf
-						Else				
+'						If black_white_trans = 2
+'							If p.r > bw_threshold Or p.g > bw_threshold  Or p.b > bw_threshold 	
+'								cnt=cnt+1
+'							EndIf
+'						Else				
 							cnt=cnt+1
-						EndIf
+'						EndIf
 					EndIf
 				EndIf
 			EndIf
 		Next	
 		If cnt > 0
+'			write_a_line("debug   cnt: "+ cnt)
 			If first_step = 0 Then write_a_line("- time: '+1'")
 		  	write_a_line("  lights:")
 			For t = 0 To num_leds-1
@@ -1934,11 +2044,14 @@ Type led
 						write_a_line("    "+p.name+": '"+ r+g+b+"'")
 					Else
 						If (p.prev_r <> p.r Or p.prev_g <> p.g Or p.prev_b <> p.b)					
-							If fade_out
-								If p.r > 0 Or p.g > 0 Or p.b > 0	
-									write_a_line("    "+p.name+":")
-									write_a_line("        color: '"+ r+g+b +"'")
-									write_a_line("        fade: 100ms")
+							If black_white_trans = 2
+								If p.r = 0 And p.g = 0 And p.b = 0	
+									'write_a_line("    "+p.name+":")
+									'write_a_line("        color: '"+ r+g+b +"'")
+									'write_a_line("        fade: 100ms")
+									write_a_line("    "+p.name+": stop")
+								Else				
+									write_a_line("    "+p.name+": '"+ r+g+b+"'")									
 								EndIf
 							Else				
 								write_a_line("    "+p.name+": '"+ r+g+b+"'")
@@ -2095,30 +2208,54 @@ End Function
 
 Function SetUpLeds2(fh:TStream)
 
-	Local ln$
+	Local ln$, nm$
 	Local ledname$
-	Local xf:Float, yf:Float
+	Local xf:Float
+	Local yf:Float
+	Local rot:Float
+	Local size:Float
+	Local shape$
 	Local lnum% = 0
 	Local done% = 0
+	Local ldone% = 0
+
 
 	If fh <> Null
 		'eat up all the lines until lights section
 		While Not Eof(fh) And ln$ <> "light:"
 			ln$ = Trim(ReadLine(fh))
-			'DebugLog(ln$)
+			DebugLog(ln$)
 		Wend
 		If ln$ = "light:" Then
 			While Not Eof(fh) And Not done
 				ln$ = Trim(ReadLine(fh))
-				'DebugLog(ln$)
+				DebugLog(ln$)
+				'if we get next section we are done lights
 				If ln$ <> "servo:" And ln$ <> "switch:" Then
+					'read the light name
 					ledname$ = ParseString$(ln$, 1,":")
-					ln$ = ReadLine(fh)
-					xf = Float(ParseString$(ln$, 2,":"))
-					ln$ = ReadLine(fh)
-					yf = Float(ParseString$(ln$, 2,":"))
-					'DebugLog(ledname$+Int(xf*400)+Int(yf*800))
-					led.CreateLed(ledname, 25+Int(xf*350), 50+Int(yf*700))
+					ldone = 0
+					shape = "CIRCLE"
+					size = 0.05
+					rot = 0
+					'read the next 2-5 lines
+					'shape:, size:, rotation:, x:, y:
+					While Not Eof(fh) And Not ldone
+						ln$ = Trim(ReadLine(fh))
+						DebugLog(ln$)
+						nm$ = ParseString$(ln$, 1,":")
+						DebugLog(nm$)
+						If nm = "shape" Then shape = Trim(ParseString$(ln$, 2,":"))
+						If nm = "size" Then size = Float(ParseString$(ln$, 2,":"))
+						If nm = "rotation" Then rot = Float(ParseString$(ln$, 2,":"))
+						If nm = "x" Then xf = Float(ParseString$(ln$, 2,":"))
+						If nm = "y" Then 
+							yf = Float(ParseString$(ln$, 2,":"))
+		'					led.CreateLed(ledname, 25+Int(xf*350), 50+Int(yf*700))
+							led.CreateLed(ledname, xf, yf, shape, size, rot)
+							ldone = 1
+						EndIf
+					Wend
 				Else
 					done = True
 				EndIf
