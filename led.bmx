@@ -24,6 +24,11 @@ Pinlandia - LED.BMX
 	- add a B/W toggle - either 000000 or FFFFFF based on threshold
 
 ****************  History  *************************
+- V3.05 - 2023/06/26
+	- updated mac build for 64-bit chips
+	- update to resolve mac issue reading pixels
+	- update to support linux build
+
 - V3.04 - 2020/10/21
 	- correct output of non changing leds
 
@@ -101,12 +106,11 @@ Strict
 Framework BRL.GlMax2D
 
 Import BRL.System
-Import BRL.Basic
 Import BRL.pngloader
 Import BRL.pixmap
 Import BRL.Retro
 
-AppTitle$ = "Pinlandia - V3.04 - 2020-10-21"
+AppTitle$ = "Pinlandia - V3.05 - 2023-06-26"
 
 SetGraphicsDriver GLMax2DDriver()
 
@@ -168,7 +172,8 @@ Global ledsonly:Int = 0
 Global slowmo:Int = 0
 Global blendit:Int = 1
 Global black_white_trans:Int = 0 
-Global bw_threshold:Int = 32 
+Global bw_threshold:Int = 32
+Global adjust_get_pixel:Int = 0
 
 Global g_fh:TStream
 Global g_write_to_file:Int = 0
@@ -198,6 +203,20 @@ Global p_flipper#[]=[0.0,0.0, -36.0,9.0, -36.0,-9.0]
 
 FlushKeys()
 FlushMouse()
+
+' To work around some issue on Mac we may need to adjust how we read pixels.
+' This will test to see if the alternative method is needed and automatically enable it if so.
+Cls
+SetColor 10,10,10
+DrawRect( 400, 400, 1, 1 )
+pixColor = GetPixel(400, 400)
+If pixColor.red <> 10
+	adjust_get_pixel = 1
+	pixColor = GetPixel(400, 400)
+	If pixColor.red <> 10
+		adjust_get_pixel = 0
+	EndIf
+EndIf
 
 Repeat
 
@@ -1623,11 +1642,12 @@ Function loadImages()
 	Local ftype = 0
 	Local dir$ = "shapes"
 	Local subdir$ = ""
-	Local hdir
+	Local hdir:Byte Ptr
+	Local zero:Byte Ptr = 0
 	
 	s = 0
 	hdir = ReadDir(dir$)
-	If hdir <> 0
+	If hdir <> zero
 		subdir$ = NextFile(hdir)
 		While subdir$ <> ""
 			ftype = FileType(dir$+"\"+subdir$)
@@ -1744,7 +1764,11 @@ Function GetPixel:appColor(x:Int, y:Int)
   Local result:appColor =New appColor
 
   Local tmp:TImage =CreateImage(1, 1, DYNAMICIMAGE)
-  GrabImage tmp, x, y
+  If adjust_get_pixel
+  	GrabImage tmp, x*2, y - (800 - y)
+  Else
+	GrabImage tmp, x, y
+  EndIf
   Local temp:TPixmap =LockImage(tmp)
   Local argb:Int =Temp.ReadPixel(0, 0)
   UnlockImage(tmp)
